@@ -22,7 +22,7 @@ public class BatteryManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        text.text = "Batteries: " + battery;
+        text.text = ": " + battery;
 		
 	}
 }
