@@ -49,12 +49,12 @@ public class Player_Movement : MonoBehaviour
             {
                 audioSource.Play();
             }
-            State = 2;
+            State = 1;
             anim.SetInteger("State", State);
             transform.position -= transform.forward * Time.deltaTime * maxSpeed;
 
             RB.velocity = new Vector2(0, RB.velocity.y);
-            State = 0;
+            //State = 0;
 
         }
         else if (Input.GetKey("s"))
@@ -63,7 +63,7 @@ public class Player_Movement : MonoBehaviour
             {
                 audioSource.Play();
             }
-            State = 3;
+            State = 1;
             anim.SetInteger("State", State);
             transform.position += transform.forward * Time.deltaTime * maxSpeed;
 
