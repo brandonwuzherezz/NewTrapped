@@ -77,14 +77,6 @@ public class Player_Movement : MonoBehaviour
             anim.SetInteger("State", State);
         }
         //if(Input.anyKey == true && anim != null)
-
-       
-        //Void OnCollisionEnter(Collision collision)
-        {
-           // RB.velocity = new Vector3(0, RB.velocity.y, 0);
-            //RB.velocity = new Vector2(0, RB.velocity.y);
-        }
-
         if (anim != null)
         {
             anim.SetInteger("State", State);
@@ -110,5 +102,13 @@ public class Player_Movement : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
+    }
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.tag == "Shadow")
+        {
+            Destroy(GameObject.FindWithTag("Player"));
+            Debug.Log("Trigger!");
+        }
     }
 }
