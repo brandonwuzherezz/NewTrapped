@@ -936,7 +936,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 0
-  m_Color: {r: 0.36657923, g: 0.97794116, b: 0.31639275, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 10
   m_Range: 10
   m_SpotAngle: 20
@@ -976,6 +976,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myLight: {fileID: 0}
   maxIntensity: 10
+  duration: 0.25
+  rcolor: {r: 1, g: 0, b: 0, a: 1}
+  wcolor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &139371325
 Prefab:
   m_ObjectHideFlags: 0
@@ -3328,7 +3331,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 500
+  m_Intensity: 20
   m_Range: 21.715515
   m_SpotAngle: 37.504272
   m_CookieSize: 10

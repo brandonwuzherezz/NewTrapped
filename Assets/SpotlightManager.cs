@@ -11,6 +11,11 @@ public class SpotlightManager : MonoBehaviour {
 
     public float maxIntensity = 10f;
 
+    public float duration = .025f;
+
+    public Color rcolor = Color.red;
+    public Color wcolor = Color.white;
+
     // Use this for initialization
     void Start () {
 
@@ -24,11 +29,17 @@ public class SpotlightManager : MonoBehaviour {
 
         if(noBatteries == true)
         {
+
+            float t = Mathf.PingPong(Time.time,duration);
+            myLight.color = Color.Lerp(rcolor, wcolor, t);
             myLight.intensity -= 0.05f;
+            
         }
         else
         {
             myLight.intensity = maxIntensity;
+            myLight.color = wcolor;
+
         }
 		
 	}

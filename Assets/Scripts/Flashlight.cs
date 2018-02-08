@@ -7,13 +7,13 @@ public class Flashlight : MonoBehaviour
 {
 
     public KeyCode flashlightToggleKey = KeyCode.F;
-    public float batteryLifeInSeconds = 5f;
 
-    public float maxIntensity = 12f;
+    public float maxIntensity;
 
-    public int totalBatteries =1;
+    public int totalBatteries = 1;
 
     private float batteryLife;
+
     public bool isActive;
 
     public Light myLight;
@@ -30,7 +30,7 @@ public class Flashlight : MonoBehaviour
     void Start()
     {
         myLight = GetComponent<Light>();
-        batteryLife = myLight.intensity;
+        batteryLife = maxIntensity;
 
         flashlightbar.value = maxIntensity;
         text = GetComponent<Text>();
@@ -46,7 +46,7 @@ public class Flashlight : MonoBehaviour
         {
             isActive = !isActive;
 
-            if (myLight.intensity > 0)
+            if (batteryLife > 0)
             {
                 audioSource.Play();
             }
@@ -56,9 +56,10 @@ public class Flashlight : MonoBehaviour
         {
 
             myLight.enabled = true;
+            batteryLife -= 0.1f;
             myLight.intensity -= 0.1f;
 
-            flashlightbar.value = myLight.intensity / maxIntensity;
+            flashlightbar.value = batteryLife / maxIntensity;
 
             Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.y); //mouse position
             //Vector3 lookPos = Camera.main.ScreenToWorldPoint(mousePos); // convert to position in the world
@@ -68,7 +69,7 @@ public class Flashlight : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, speed * Time.deltaTime);
             Debug.Log("lookPos: " + mousePos);
 
-            if (myLight.intensity <= 0)
+            if (batteryLife <= 0)
             {
                 myLight.enabled = false;
                 AddBatteryLife();
@@ -97,7 +98,7 @@ public class Flashlight : MonoBehaviour
         {
             totalBatteries -= 1;
             BatteryManager.battery -= 1;
-            myLight.intensity += maxIntensity;
+            batteryLife += maxIntensity;
             flashlightbar.value = maxIntensity;
             isActive = !isActive;
 
