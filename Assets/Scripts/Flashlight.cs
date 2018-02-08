@@ -11,7 +11,7 @@ public class Flashlight : MonoBehaviour
 
     public float maxIntensity = 12f;
 
-    public int totalBatteries;
+    public int totalBatteries =1;
 
     private float batteryLife;
     public bool isActive;
@@ -56,7 +56,7 @@ public class Flashlight : MonoBehaviour
         {
 
             myLight.enabled = true;
-            myLight.intensity -= 0.025f;
+            myLight.intensity -= 0.1f;
 
             flashlightbar.value = myLight.intensity / maxIntensity;
 
@@ -88,6 +88,7 @@ public class Flashlight : MonoBehaviour
     {
         totalBatteries += _collected;
         BatteryManager.battery += _collected;
+
     }
 
     public void AddBatteryLife()
@@ -100,6 +101,11 @@ public class Flashlight : MonoBehaviour
             flashlightbar.value = maxIntensity;
             isActive = !isActive;
 
+        }
+
+        else
+        {
+            SpotlightManager.noBatteries = true;
         }
 
     }
