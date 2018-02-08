@@ -107,7 +107,7 @@ public class Player_Movement : MonoBehaviour
     {
         if (col.gameObject.tag == "Shadow")
         {
-            Destroy(GameObject.FindWithTag("Player"));
+            //Destroy(GameObject.FindWithTag("Player"));
             Debug.Log("Trigger!");
         }
     }

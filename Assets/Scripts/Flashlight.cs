@@ -23,6 +23,7 @@ public class Flashlight : MonoBehaviour
     public Text text;
 
     public float speed = 5.0f;
+    public float shadowDrain;
 
     AudioSource audioSource;
 
@@ -102,5 +103,14 @@ public class Flashlight : MonoBehaviour
 
         }
 
+    }
+
+    void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.tag == "Shadow")
+        {
+            myLight.intensity -= shadowDrain;
+            //Debug.Log("Trigger!");
+        }
     }
 }
