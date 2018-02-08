@@ -11,36 +11,49 @@ public class Shadow_Movement : MonoBehaviour {
     public Vector3 Target;
     public Vector3 MoveDirection;
     public Vector3 Velocity;
+    public Transform Player;
+    public float aggroDist;
 	
 	// Update is called once per frame
 	void Update () {
-		if(curWayPoint < Waypoints.Length)
+        float distance = Vector3.Distance(transform.position, Player.transform.position);
+        if (distance > aggroDist)
         {
-            //Find target waypoint
-            Target = Waypoints[curWayPoint].position;
-            //Move to target
-            MoveDirection = Target - transform.position;
-            Velocity = GetComponent<Rigidbody>().velocity;
 
-            if(MoveDirection.magnitude < 1)
+            if (curWayPoint < Waypoints.Length)
             {
-                curWayPoint++;
+                //Find target waypoint
+                Target = Waypoints[curWayPoint].position;
+                //Move to target
+                MoveDirection = Target - transform.position;
+                Velocity = GetComponent<Rigidbody>().velocity;
+
+                if (MoveDirection.magnitude < 1)
+                {
+                    curWayPoint++;
+                }
+                else
+                {
+                    Velocity = MoveDirection.normalized * Speed;
+                }
             }
             else
             {
-                Velocity = MoveDirection.normalized * Speed;
+                if (doPatrol)
+                {
+                    curWayPoint = 0;
+                }
+                else
+                {
+                    Velocity = Vector3.zero;
+                }
             }
         }
         else
         {
-            if (doPatrol)
-            {
-                curWayPoint = 0;
-            }
-            else
-            {
-                Velocity = Vector3.zero;
-            }
+            Target = Player.transform.position;
+            MoveDirection = Target - transform.position;
+            Velocity = MoveDirection.normalized * Speed;
         }
 
         GetComponent<Rigidbody>().velocity = Velocity;
