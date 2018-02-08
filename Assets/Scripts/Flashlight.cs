@@ -35,7 +35,6 @@ public class Flashlight : MonoBehaviour
         flashlightbar.value = maxIntensity;
         text = GetComponent<Text>();
         audioSource = GetComponent<AudioSource>();
-
     }
 
     // Update is called once per frame
@@ -56,6 +55,7 @@ public class Flashlight : MonoBehaviour
         {
 
             myLight.enabled = true;
+            SetBoxColliders(true);
             myLight.intensity -= 0.025f;
 
             flashlightbar.value = myLight.intensity / maxIntensity;
@@ -71,6 +71,7 @@ public class Flashlight : MonoBehaviour
             if (myLight.intensity <= 0)
             {
                 myLight.enabled = false;
+                SetBoxColliders(false);
                 AddBatteryLife();
             }
 
@@ -78,9 +79,8 @@ public class Flashlight : MonoBehaviour
         else
         {
             myLight.enabled = false;
+            SetBoxColliders(false);
         }
-
-
 
     }
 
@@ -102,5 +102,23 @@ public class Flashlight : MonoBehaviour
 
         }
 
+    }
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Shadow"))
+        {
+            if (isActive)
+            {
+                myLight.intensity -= maxIntensity/20f;
+
+            }
+        }
+    }
+    public void SetBoxColliders(bool active)
+    {
+        foreach (BoxCollider b in GetComponents<BoxCollider>())
+        {
+            b.enabled = active;
+      }
     }
 }
