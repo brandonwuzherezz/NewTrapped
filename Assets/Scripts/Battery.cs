@@ -15,7 +15,7 @@ public class Battery : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-
+            SpotlightManager.noBatteries = false;
             GameObject.FindGameObjectWithTag("Flashlight").GetComponent<Flashlight>().Collected(collected);
             audioSource.Play();
             Destroy(gameObject);
