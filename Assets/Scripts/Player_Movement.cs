@@ -10,6 +10,7 @@ public class Player_Movement : MonoBehaviour
     int State = 0;
     AudioSource audioSource;
 
+    Flashlight flashLight;
     Animator anim;
     Rigidbody RB;
     void Start()
@@ -17,6 +18,9 @@ public class Player_Movement : MonoBehaviour
         audioSource = GameObject.FindGameObjectWithTag("W_soundFX").GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
         RB = GetComponent<Rigidbody>();
+
+        GameObject flash = GameObject.Find("Flashlight1");
+        flashLight = flash.GetComponent<Flashlight>();
     }
     void FixedUpdate()
     {
@@ -107,7 +111,9 @@ public class Player_Movement : MonoBehaviour
     {
         if (col.gameObject.tag == "Shadow")
         {
-            //Destroy(GameObject.FindWithTag("Player"));
+            //flashLight.isActive = true;
+            flashLight.batteryLife = 0;
+            flashLight.myLight.intensity = 0;
             Debug.Log("Trigger!");
         }
     }

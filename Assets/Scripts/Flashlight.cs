@@ -70,7 +70,7 @@ public class Flashlight : MonoBehaviour
             float angle = Mathf.Atan2(mousePos.x - 444.0f, mousePos.z - 291.0f) * Mathf.Rad2Deg; // arctan b/w x and y            
             Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.up); //rotate based on angle and axis(forward = z and up = y)      
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, speed * Time.deltaTime);
-            Debug.Log("lookPos: " + mousePos);
+            //Debug.Log("lookPos: " + mousePos);
 
             if (batteryLife <= 0)
             {
@@ -119,7 +119,9 @@ public class Flashlight : MonoBehaviour
         {
             if (isActive)
             {
+
                 batteryLife -= maxBatteryLife / 12.5f;
+
             }
         }
     }
