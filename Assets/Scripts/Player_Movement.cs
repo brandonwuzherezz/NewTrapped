@@ -112,8 +112,8 @@ public class Player_Movement : MonoBehaviour
         if (col.gameObject.tag == "Shadow")
         {
             //flashLight.isActive = true;
-            flashLight.batteryLife = 0;
-            flashLight.myLight.intensity = 0;
+            //flashLight.batteryLife = 0;
+            //flashLight.myLight.intensity = 0;
             Debug.Log("Trigger!");
         }
     }
