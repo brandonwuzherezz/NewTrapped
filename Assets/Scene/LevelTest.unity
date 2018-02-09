@@ -5559,6 +5559,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1295566734}
   - component: {fileID: 1295566735}
+  - component: {fileID: 1295566736}
   m_Layer: 0
   m_Name: Spotlight
   m_TagString: Untagged
@@ -5617,6 +5618,22 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1295566736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1295566733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7aa2f74b8b415394e9e9975bb0f7ef4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myLight: {fileID: 0}
+  maxIntensity: 10
+  duration: 0.5
+  rcolor: {r: 1, g: 0, b: 0, a: 1}
+  wcolor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1321089509
 Prefab:
   m_ObjectHideFlags: 0
@@ -6776,8 +6793,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashlightToggleKey: 102
-  batteryLifeInSeconds: 5100
-  maxIntensity: 12
+  maxIntensity: 50
   totalBatteries: 0
   isActive: 0
   myLight: {fileID: 0}
@@ -6795,7 +6811,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 12
+  m_Intensity: 50
   m_Range: 21.715515
   m_SpotAngle: 37.504272
   m_CookieSize: 10
