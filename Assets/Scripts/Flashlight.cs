@@ -109,7 +109,7 @@ public class Flashlight : MonoBehaviour
         {
             if (isActive)
             {
-                myLight.intensity -= maxIntensity/20f;
+                myLight.intensity -= batteryLife/20f;
 
             }
         }
