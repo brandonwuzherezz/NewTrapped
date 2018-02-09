@@ -8,11 +8,11 @@ public class Flashlight : MonoBehaviour
 
     public KeyCode flashlightToggleKey = KeyCode.F;
 
-    public float maxIntensity;
+    public float maxBatteryLife;
 
     public int totalBatteries = 1;
 
-    private float batteryLife;
+    public float batteryLife;
 
     public bool isActive;
 
@@ -30,9 +30,9 @@ public class Flashlight : MonoBehaviour
     void Start()
     {
         myLight = GetComponent<Light>();
-        batteryLife = maxIntensity;
+        batteryLife = maxBatteryLife;
 
-        flashlightbar.value = maxIntensity;
+        flashlightbar.value = maxBatteryLife;
         text = GetComponent<Text>();
         audioSource = GetComponent<AudioSource>();
     }
@@ -57,13 +57,12 @@ public class Flashlight : MonoBehaviour
             myLight.enabled = true;
 
             batteryLife -= 0.1f;
-            myLight.intensity -= 0.1f;
 
             SetBoxColliders(true);
            
 
 
-            flashlightbar.value = batteryLife / maxIntensity;
+            flashlightbar.value = batteryLife / maxBatteryLife;
 
             Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.y); //mouse position
             //Vector3 lookPos = Camera.main.ScreenToWorldPoint(mousePos); // convert to position in the world
@@ -102,8 +101,8 @@ public class Flashlight : MonoBehaviour
         {
             totalBatteries -= 1;
             BatteryManager.battery -= 1;
-            batteryLife += maxIntensity;
-            flashlightbar.value = maxIntensity;
+            batteryLife = maxBatteryLife;
+            flashlightbar.value = maxBatteryLife;
             isActive = !isActive;
 
         }
@@ -120,8 +119,7 @@ public class Flashlight : MonoBehaviour
         {
             if (isActive)
             {
-                myLight.intensity -= maxIntensity/20f;
-
+                batteryLife -= maxBatteryLife / 12.5f;
             }
         }
     }
