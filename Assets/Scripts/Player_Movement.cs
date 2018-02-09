@@ -10,6 +10,7 @@ public class Player_Movement : MonoBehaviour
     int State = 0;
     AudioSource audioSource;
 
+    Flashlight flashLight;
     Animator anim;
     Rigidbody RB;
     void Start()
@@ -17,6 +18,9 @@ public class Player_Movement : MonoBehaviour
         audioSource = GameObject.FindGameObjectWithTag("W_soundFX").GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
         RB = GetComponent<Rigidbody>();
+
+        GameObject flash = GameObject.Find("Flashlight1");
+        flashLight = flash.GetComponent<Flashlight>();
     }
     void FixedUpdate()
     {
@@ -77,14 +81,6 @@ public class Player_Movement : MonoBehaviour
             anim.SetInteger("State", State);
         }
         //if(Input.anyKey == true && anim != null)
-
-       
-        //Void OnCollisionEnter(Collision collision)
-        {
-           // RB.velocity = new Vector3(0, RB.velocity.y, 0);
-            //RB.velocity = new Vector2(0, RB.velocity.y);
-        }
-
         if (anim != null)
         {
             anim.SetInteger("State", State);
@@ -110,5 +106,15 @@ public class Player_Movement : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
+    }
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.tag == "Shadow")
+        {
+            //flashLight.isActive = true;
+            flashLight.batteryLife = 0;
+            flashLight.myLight.intensity = 0;
+            Debug.Log("Trigger!");
+        }
     }
 }
