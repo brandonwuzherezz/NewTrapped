@@ -109,12 +109,21 @@ public class Player_Movement : MonoBehaviour
     }
     void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.tag == "Shadow")
+        //Battery drain on contact(In progress)
+        /* if (col.gameObject.tag == "Shadow" && flashLight.isActive != true && flashLight.totalBatteries > 0)
+         {
+             flashLight.totalBatteries -= 1;
+         }
+         else if (col.gameObject.tag == "Shadow" && flashLight.isActive != true && flashLight.totalBatteries == 0)
+         {
+             Destroy(GameObject.FindWithTag("Player"));
+         }*/
+
+         //Shadow contact kills player
+        if (col.gameObject.tag == "Shadow" && flashLight.isActive != true)
         {
-            //flashLight.isActive = true;
-            flashLight.batteryLife = 0;
-            flashLight.myLight.intensity = 0;
-            Debug.Log("Trigger!");
+            Destroy(GameObject.FindWithTag("Player"));
         }
+
     }
 }
