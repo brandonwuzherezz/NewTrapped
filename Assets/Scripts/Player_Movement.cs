@@ -123,6 +123,10 @@ public class Player_Movement : MonoBehaviour
         if (col.gameObject.tag == "Shadow" && flashLight.isActive != true)
         {
             Destroy(GameObject.FindWithTag("Player"));
+            //flashLight.isActive = true;
+            //flashLight.batteryLife = 0;
+            //flashLight.myLight.intensity = 0;
+            Debug.Log("Trigger!");
         }
 
     }
