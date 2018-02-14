@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Shadows : MonoBehaviour {
     AudioSource audioSource;
-   
-    
+
     void Start()
     {
         audioSource = GameObject.FindGameObjectWithTag("S_SoundFX").GetComponent<AudioSource>();
@@ -15,7 +14,7 @@ public class Shadows : MonoBehaviour {
     {
         if (other.CompareTag("Flashlight"))
         {
-            if (GameObject.FindGameObjectWithTag("Flashlight").GetComponent<Flashlight>().isActive)
+            if (GameObject.FindGameObjectWithTag("Flashlight").GetComponent<Flashlight>().isActive == true)
             {
                 audioSource.Play();
                 Destroy(gameObject);
