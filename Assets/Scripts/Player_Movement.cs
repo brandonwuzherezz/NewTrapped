@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player_Movement : MonoBehaviour
 {
@@ -120,9 +121,10 @@ public class Player_Movement : MonoBehaviour
          }*/
 
          //Shadow contact kills player
-        if (col.gameObject.tag == "Shadow" && flashLight.isActive != true)
+        if (col.gameObject.tag == "Shadow" && flashLight.isActive == false)
         {
-            Destroy(GameObject.FindWithTag("Player"));
+            SceneManager.LoadScene("Scene_GameOver");
+            //Destroy(GameObject.FindWithTag("Player"));
             //flashLight.isActive = true;
             //flashLight.batteryLife = 0;
             //flashLight.myLight.intensity = 0;
