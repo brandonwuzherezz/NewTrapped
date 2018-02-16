@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player_Movement : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Player_Movement : MonoBehaviour
     int State = 0;
     AudioSource audioSource;
 
+    Flashlight flashLight;
     Animator anim;
     Rigidbody RB;
     void Start()
@@ -17,6 +19,9 @@ public class Player_Movement : MonoBehaviour
         audioSource = GameObject.FindGameObjectWithTag("W_soundFX").GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
         RB = GetComponent<Rigidbody>();
+
+        GameObject flash = GameObject.Find("Flashlight1");
+        flashLight = flash.GetComponent<Flashlight>();
     }
     void FixedUpdate()
     {
@@ -105,10 +110,26 @@ public class Player_Movement : MonoBehaviour
     }
     void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.tag == "Shadow")
+        //Battery drain on contact(In progress)
+        /* if (col.gameObject.tag == "Shadow" && flashLight.isActive != true && flashLight.totalBatteries > 0)
+         {
+             flashLight.totalBatteries -= 1;
+         }
+         else if (col.gameObject.tag == "Shadow" && flashLight.isActive != true && flashLight.totalBatteries == 0)
+         {
+             Destroy(GameObject.FindWithTag("Player"));
+         }*/
+
+         //Shadow contact kills player
+        if (col.gameObject.tag == "Shadow" && flashLight.isActive == false)
         {
+            SceneManager.LoadScene("Scene_GameOver");
             //Destroy(GameObject.FindWithTag("Player"));
+            //flashLight.isActive = true;
+            //flashLight.batteryLife = 0;
+            //flashLight.myLight.intensity = 0;
             Debug.Log("Trigger!");
         }
+
     }
 }

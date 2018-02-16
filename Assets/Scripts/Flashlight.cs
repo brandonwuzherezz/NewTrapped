@@ -7,21 +7,13 @@ public class Flashlight : MonoBehaviour
 {
 
     public KeyCode flashlightToggleKey = KeyCode.F;
-
-    public float maxIntensity;
-
+    public float maxBatteryLife;
     public int totalBatteries = 1;
-
-    private float batteryLife;
-
+    public float batteryLife;
     public bool isActive;
-
     public Light myLight;
-
     public Slider flashlightbar;
-
     public Text text;
-
     public float speed = 5.0f;
 
     AudioSource audioSource;
@@ -30,9 +22,9 @@ public class Flashlight : MonoBehaviour
     void Start()
     {
         myLight = GetComponent<Light>();
-        batteryLife = maxIntensity;
+        batteryLife = maxBatteryLife;
 
-        flashlightbar.value = maxIntensity;
+        flashlightbar.value = maxBatteryLife;
         text = GetComponent<Text>();
         audioSource = GetComponent<AudioSource>();
     }
@@ -57,21 +49,20 @@ public class Flashlight : MonoBehaviour
             myLight.enabled = true;
 
             batteryLife -= 0.1f;
-            myLight.intensity -= 0.1f;
 
             SetBoxColliders(true);
            
 
 
-            flashlightbar.value = batteryLife / maxIntensity;
+            flashlightbar.value = batteryLife / maxBatteryLife;
 
             Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.y); //mouse position
             //Vector3 lookPos = Camera.main.ScreenToWorldPoint(mousePos); // convert to position in the world
-            //lookPos = lookPos - transform.position; // offset by the position of flashlight
-            float angle = Mathf.Atan2(mousePos.x - 444.0f, mousePos.z - 291.0f) * Mathf.Rad2Deg; // arctan b/w x and y            
+            //lookPos = lookPos - transform.position; // offset by the position of flashlight 
+            float angle = Mathf.Atan2(mousePos.x - (Screen.width / 2), mousePos.z - (Screen.height / 2)) * Mathf.Rad2Deg; // arctan b/w x and y            
             Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.up); //rotate based on angle and axis(forward = z and up = y)      
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, speed * Time.deltaTime);
-            Debug.Log("lookPos: " + mousePos);
+            //Debug.Log("lookPos: " + mousePos);
 
             if (batteryLife <= 0)
             {
@@ -102,8 +93,8 @@ public class Flashlight : MonoBehaviour
         {
             totalBatteries -= 1;
             BatteryManager.battery -= 1;
-            batteryLife += maxIntensity;
-            flashlightbar.value = maxIntensity;
+            batteryLife = maxBatteryLife;
+            flashlightbar.value = maxBatteryLife;
             isActive = !isActive;
 
         }
@@ -120,7 +111,8 @@ public class Flashlight : MonoBehaviour
         {
             if (isActive)
             {
-                myLight.intensity -= maxIntensity/20f;
+
+                batteryLife -= maxBatteryLife / 12.5f;
 
             }
         }
