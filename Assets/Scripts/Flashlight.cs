@@ -8,7 +8,7 @@ public class Flashlight : MonoBehaviour
 
     public KeyCode flashlightToggleKey = KeyCode.F;
     public float maxBatteryLife;
-    public int totalBatteries = 1;
+    public static int totalBatteries = 1;
     public float batteryLife;
     public bool isActive;
     public Light myLight;
@@ -32,7 +32,7 @@ public class Flashlight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        print(totalBatteries);
         if (Input.GetKeyDown(flashlightToggleKey))
         {
             isActive = !isActive;
