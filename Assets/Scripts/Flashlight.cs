@@ -46,7 +46,7 @@ public class Flashlight : MonoBehaviour
         if (isActive)
         {
 
-            myLight.enabled = true;
+           myLight.enabled = true;
 
             batteryLife -= 0.1f;
 
@@ -72,11 +72,13 @@ public class Flashlight : MonoBehaviour
             }
 
         }
+
         else
         {
             myLight.enabled = false;
             SetBoxColliders(false);
         }
+        
 
     }
 
@@ -123,5 +125,16 @@ public class Flashlight : MonoBehaviour
         {
             b.enabled = active;
       }
+    }
+
+    public void EnemiesNearby()
+    {
+
+        for (var i =0; i < 3; i++)
+        {
+            myLight.enabled = !myLight.enabled;
+        }
+
+
     }
 }
