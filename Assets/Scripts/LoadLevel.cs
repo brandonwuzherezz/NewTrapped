@@ -5,8 +5,17 @@ using UnityEngine;
 
 public class LoadLevel : MonoBehaviour {
 	public static bool ShedDoor = false;
+	public static bool hasFlashlight = false;
 	void Start () {
 		SpawnShed ();
+		if (hasFlashlight == true) {
+			GameObject flash = GameObject.Find ("Flashlight1");
+			flash.SetActive(true);
+			GameObject flash1 = GameObject.Find ("Flashlight");
+			flash1.SetActive(true);
+			GameObject Canvas = GameObject.Find ("Canvas") ;
+			Canvas.SetActive(true); 
+		}
 	}
 	void SpawnShed(){
 		
@@ -15,7 +24,10 @@ public class LoadLevel : MonoBehaviour {
 		}	
 	
 	}
-	public void SetTrue(){
+	public void setFlashlightTrue(){
+		hasFlashlight = true;
+	}
+	public void SetShedTrue(){
 		ShedDoor = true;
 	}
 }
