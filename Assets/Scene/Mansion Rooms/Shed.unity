@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4505309, g: 0.5005229, b: 0.5751029, a: 1}
+  m_IndirectSpecularColor: {r: 0.45053077, g: 0.5005226, b: 0.5751021, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -88,7 +88,6 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
-    m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -113,6 +112,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &1488400083 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114315828080052074, guid: bc39fb4a0c48ac34fb621d69bc66e58c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1587399614}
+  m_Script: {fileID: -113659843, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1001 &1587399614
 Prefab:
   m_ObjectHideFlags: 0
@@ -160,7 +165,67 @@ Prefab:
     - target: {fileID: 224082369772346634, guid: bc39fb4a0c48ac34fb621d69bc66e58c,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 52.69995
+      value: 52.700195
+      objectReference: {fileID: 0}
+    - target: {fileID: 224887154693953208, guid: bc39fb4a0c48ac34fb621d69bc66e58c,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -20.86795
+      objectReference: {fileID: 0}
+    - target: {fileID: 224214633801633604, guid: bc39fb4a0c48ac34fb621d69bc66e58c,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224887154693953208, guid: bc39fb4a0c48ac34fb621d69bc66e58c,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 590.2084
+      objectReference: {fileID: 0}
+    - target: {fileID: 224887154693953208, guid: bc39fb4a0c48ac34fb621d69bc66e58c,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 358.41605
+      objectReference: {fileID: 0}
+    - target: {fileID: 224884646154304502, guid: bc39fb4a0c48ac34fb621d69bc66e58c,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -254.09229
+      objectReference: {fileID: 0}
+    - target: {fileID: 224884646154304502, guid: bc39fb4a0c48ac34fb621d69bc66e58c,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 76.48069
+      objectReference: {fileID: 0}
+    - target: {fileID: 224884646154304502, guid: bc39fb4a0c48ac34fb621d69bc66e58c,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 145.90771
+      objectReference: {fileID: 0}
+    - target: {fileID: 224082369772346634, guid: bc39fb4a0c48ac34fb621d69bc66e58c,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -347.2998
+      objectReference: {fileID: 0}
+    - target: {fileID: 224082369772346634, guid: bc39fb4a0c48ac34fb621d69bc66e58c,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -59.580666
+      objectReference: {fileID: 0}
+    - target: {fileID: 114500326277600470, guid: bc39fb4a0c48ac34fb621d69bc66e58c,
+        type: 2}
+      propertyPath: flashlightbar
+      value: 
+      objectReference: {fileID: 1488400083}
+    - target: {fileID: 114500326277600470, guid: bc39fb4a0c48ac34fb621d69bc66e58c,
+        type: 2}
+      propertyPath: isActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114500326277600470, guid: bc39fb4a0c48ac34fb621d69bc66e58c,
+        type: 2}
+      propertyPath: maxBatteryLife
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bc39fb4a0c48ac34fb621d69bc66e58c, type: 2}
