@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class ActivateFlashlight : MonoBehaviour {
 
-	public void OnTriggerEnter(Collider other)
+    public static bool hasFlashlight = false;
+    public static bool isFlashlightDestroyed = false;
+    private void Start()
+    {
+        if (isFlashlightDestroyed)
+        {
+            Destroy(gameObject);
+        }
+    }
+    public void OnTriggerEnter(Collider other)
 	{
 		if (other.CompareTag("Player"))
 		{
-			GameObject flash = GameObject.Find ("Flashlight1");
-			flash.SetActive(true);
-			GameObject flash1 = GameObject.Find ("Flashlight");
-			flash1.SetActive(true);
-			GameObject Canvas = GameObject.Find ("Canvas") ;
-			Canvas.SetActive(true); 
-			GameObject.FindGameObjectWithTag ("Load").GetComponent<LoadLevel> ().setFlashlightTrue();
-			Destroy(gameObject);
+            hasFlashlight = true;
+            isFlashlightDestroyed = true;
+            Destroy(gameObject);
 		}
 
 	}
