@@ -10,10 +10,7 @@ public class Battery : MonoBehaviour
     public static List<string> DeletedBatteries = new List<string>();
     void Start()
     {
-         foreach(var human in DeletedBatteries)
-        {
-            Debug.Log(human);
-        }
+        
         audioSource = GameObject.FindGameObjectWithTag("B_SoundFX").GetComponent<AudioSource>();
         if (isDestroyed)
         {

@@ -8,7 +8,7 @@ public class Flashlight : MonoBehaviour
 
     public KeyCode flashlightToggleKey = KeyCode.F;
     public float maxBatteryLife;
-    public static int totalBatteries = 1;
+    public static int totalBatteries = 0;
     public static float batteryLife ;
     public bool isActive;
     public Light myLight;

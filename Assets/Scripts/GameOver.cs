@@ -9,7 +9,7 @@ public class GameOver : MonoBehaviour {
     {
         if (Input.GetMouseButtonDown(0))
         {
-            SceneManager.LoadScene("LevelTest");
+            SceneManager.LoadScene("Courtyard");
         }
     }
 }
