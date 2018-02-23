@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DeactivateChildern : MonoBehaviour {
-	// Update is called once per frame
-	void Update () {
+public class ActivateBatteries : MonoBehaviour {
+
+    void Update()
+    {
         foreach (Transform child in this.transform)
         {
-            if (ActivateFlashlight.hasFlashlight == false)
+            if (Battery.DeletedBatteries.Contains("battery1") == false)
             {
                 child.gameObject.SetActive(false);
             }
-            else 
+            else
             {
                 child.gameObject.SetActive(true);
             }
@@ -19,4 +20,3 @@ public class DeactivateChildern : MonoBehaviour {
 
     }
 }
-
