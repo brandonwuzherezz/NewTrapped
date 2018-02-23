@@ -11,10 +11,14 @@ public class Flashlight : MonoBehaviour
     public int totalBatteries = 1;
     public float batteryLife;
     public bool isActive;
-    public Light myLight;
+    public static Light myLight;
     public Slider flashlightbar;
     public Text text;
     public float speed = 5.0f;
+
+    //flicker values
+    public static float maxFlickerSpeed = 1f;
+    public static float minFlickerSpeed = 0.1f;
 
     AudioSource audioSource;
 
@@ -127,13 +131,13 @@ public class Flashlight : MonoBehaviour
       }
     }
 
-    public void EnemiesNearby()
+    public static IEnumerator FlashlightFlicker()
     {
+        myLight.enabled = true;
+        yield return new WaitForSeconds(Random.Range(minFlickerSpeed, maxFlickerSpeed));
 
-        for (var i =0; i < 3; i++)
-        {
-            myLight.enabled = !myLight.enabled;
-        }
+        myLight.enabled = false;
+        yield return new WaitForSeconds(Random.Range(minFlickerSpeed, maxFlickerSpeed));
 
 
     }
