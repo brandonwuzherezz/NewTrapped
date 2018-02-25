@@ -16,9 +16,7 @@ public class Flashlight : MonoBehaviour
     public Text text;
     public float speed = 5.0f;
 
-    //flicker values
-    public static float maxFlickerSpeed = 1f;
-    public static float minFlickerSpeed = 0.1f;
+
 
     AudioSource audioSource;
 
@@ -39,6 +37,7 @@ public class Flashlight : MonoBehaviour
 
         if (Input.GetKeyDown(flashlightToggleKey))
         {
+
             isActive = !isActive;
 
             if (batteryLife > 0)
@@ -50,7 +49,7 @@ public class Flashlight : MonoBehaviour
         if (isActive)
         {
 
-           myLight.enabled = true;
+            myLight.enabled = true;
 
             batteryLife -= 0.1f;
 
@@ -128,17 +127,7 @@ public class Flashlight : MonoBehaviour
         foreach (BoxCollider b in GetComponents<BoxCollider>())
         {
             b.enabled = active;
-      }
+        }
     }
 
-    public static IEnumerator FlashlightFlicker()
-    {
-        myLight.enabled = true;
-        yield return new WaitForSeconds(Random.Range(minFlickerSpeed, maxFlickerSpeed));
-
-        myLight.enabled = false;
-        yield return new WaitForSeconds(Random.Range(minFlickerSpeed, maxFlickerSpeed));
-
-
-    }
 }

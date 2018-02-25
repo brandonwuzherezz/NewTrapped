@@ -14,7 +14,6 @@ public class Shadow_Movement : MonoBehaviour {
     public Transform Player;
     public float aggroDist;
 
-    public static bool nearEnemies = true;
 
 
     // Update is called once per frame
@@ -22,7 +21,6 @@ public class Shadow_Movement : MonoBehaviour {
         float distance = Vector3.Distance(transform.position, Player.transform.position);
         if (distance > aggroDist)
         {
-            StartCoroutine(Flashlight.FlashlightFlicker());
 
             if (curWayPoint < Waypoints.Length)
             {
@@ -58,9 +56,14 @@ public class Shadow_Movement : MonoBehaviour {
             Target = Player.transform.position;
             MoveDirection = Target - transform.position;
             Velocity = MoveDirection.normalized * Speed;
+           
+
         }
+
+
 
         GetComponent<Rigidbody>().velocity = Velocity;
         transform.LookAt(Target);
-	}
+
+    }
 }
