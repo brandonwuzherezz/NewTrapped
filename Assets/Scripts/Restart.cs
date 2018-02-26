@@ -10,6 +10,7 @@ public class Restart : MonoBehaviour {
         GUILayout.BeginArea(new Rect(Screen.width - 125, 10, 100, 100));
         if (GUILayout.Button("Restart"))
         {
+           
             SceneManager.LoadScene("LevelTest");
         }
         GUILayout.EndArea();
