@@ -9,7 +9,16 @@ public class GameOver : MonoBehaviour {
     {
         if (Input.GetMouseButtonDown(0))
         {
-            SceneManager.LoadScene("Courtyard");
+            Flashlight.creation = false;
+            Flashlight.totalBatteries = 0;
+            Battery.isDestroyed = false;
+            Battery.DeletedBatteries.Clear();
+            Timer.Deletedimages.Clear();
+            LoadLevel.ShedDoor = false;
+            ActivateFlashlight.hasFlashlight = false;
+            ActivateFlashlight.isFlashlightDestroyed = false;
+            BatteryManager.battery = 0;
+           SceneManager.LoadScene("Courtyard");
         }
     }
 }
