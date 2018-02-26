@@ -7,7 +7,7 @@ public class BatteryManager : MonoBehaviour {
 
     // Use this for initialization
 
-    public static int battery;
+    public static int battery = 0;
 
     Text text;
 
@@ -15,7 +15,7 @@ public class BatteryManager : MonoBehaviour {
     void Start () {
 
         text = GetComponent<Text>();
-        battery = 0;
+        battery = battery;
 		
 	}
 	

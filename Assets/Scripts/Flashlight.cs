@@ -8,31 +8,33 @@ public class Flashlight : MonoBehaviour
 
     public KeyCode flashlightToggleKey = KeyCode.F;
     public float maxBatteryLife;
-    public int totalBatteries = 1;
-    public float batteryLife;
+    public static int totalBatteries = 0;
+    public static float batteryLife ;
     public bool isActive;
     public Light myLight;
     public Slider flashlightbar;
     public Text text;
     public float speed = 5.0f;
-
+	public static bool creation = false;
     AudioSource audioSource;
 
     // Use this for initialization
     void Start()
     {
         myLight = GetComponent<Light>();
-        batteryLife = maxBatteryLife;
-
-        flashlightbar.value = maxBatteryLife;
+        
+		if (creation == false) {
+			batteryLife = maxBatteryLife;
+		}
+		flashlightbar.value = batteryLife/maxBatteryLife;
         text = GetComponent<Text>();
         audioSource = GetComponent<AudioSource>();
+		creation = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-
         if (Input.GetKeyDown(flashlightToggleKey))
         {
             isActive = !isActive;
@@ -55,7 +57,7 @@ public class Flashlight : MonoBehaviour
 
 
             flashlightbar.value = batteryLife / maxBatteryLife;
-
+			print (flashlightbar.value);
             Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.y); //mouse position
             //Vector3 lookPos = Camera.main.ScreenToWorldPoint(mousePos); // convert to position in the world
             //lookPos = lookPos - transform.position; // offset by the position of flashlight 
