@@ -11,11 +11,11 @@ public class Flashlight : MonoBehaviour
     public static int totalBatteries = 0;
     public static float batteryLife ;
     public bool isActive;
-    public Light myLight;
+    public static Light myLight;
     public Slider flashlightbar;
     public Text text;
     public float speed = 5.0f;
-	public static bool creation = false;
+    public static bool creation = false;
     AudioSource audioSource;
 
     // Use this for initialization
@@ -37,6 +37,7 @@ public class Flashlight : MonoBehaviour
     {
         if (Input.GetKeyDown(flashlightToggleKey))
         {
+
             isActive = !isActive;
 
             if (batteryLife > 0)
@@ -74,11 +75,13 @@ public class Flashlight : MonoBehaviour
             }
 
         }
+
         else
         {
             myLight.enabled = false;
             SetBoxColliders(false);
         }
+        
 
     }
 
@@ -124,6 +127,7 @@ public class Flashlight : MonoBehaviour
         foreach (BoxCollider b in GetComponents<BoxCollider>())
         {
             b.enabled = active;
-      }
+        }
     }
+
 }

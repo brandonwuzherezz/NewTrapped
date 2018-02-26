@@ -13,9 +13,11 @@ public class Shadow_Movement : MonoBehaviour {
     public Vector3 Velocity;
     public Transform Player;
     public float aggroDist;
-	
-	// Update is called once per frame
-	void Update () {
+
+
+
+    // Update is called once per frame
+    void Update () {
         float distance = Vector3.Distance(transform.position, Player.transform.position);
         if (distance > aggroDist)
         {
@@ -54,9 +56,14 @@ public class Shadow_Movement : MonoBehaviour {
             Target = Player.transform.position;
             MoveDirection = Target - transform.position;
             Velocity = MoveDirection.normalized * Speed;
+           
+
         }
+
+
 
         GetComponent<Rigidbody>().velocity = Velocity;
         transform.LookAt(Target);
-	}
+
+    }
 }
