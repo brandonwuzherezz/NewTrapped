@@ -12,7 +12,7 @@ public class LoadLevel : MonoBehaviour {
     void SpawnShed(){
 		
 		if(ShedDoor == true){
-			GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(15.49f,-0.08f,-3.18f);
+			GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(0.920011f, -0.04718876f, -0.5662009f);
 		}	
 	
 	}
