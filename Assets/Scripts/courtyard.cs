@@ -9,7 +9,7 @@ public class courtyard : MonoBehaviour {
 	{
 		if (col.gameObject.tag == "Player")
 		{
-			SceneManager.LoadScene("Courtyard");
+			SceneManager.LoadScene("1Courtyard");
 		}
 	}
 }
