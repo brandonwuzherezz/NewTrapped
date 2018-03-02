@@ -9,7 +9,7 @@ public class MansonEntrance : MonoBehaviour {
 	{
 		if (col.gameObject.tag == "Player")
 		{
-			SceneManager.LoadScene("Foyer");
+			SceneManager.LoadScene("3Foyer");
 		}
 	}
 }

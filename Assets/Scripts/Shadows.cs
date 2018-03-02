@@ -20,6 +20,7 @@ public class Shadows : MonoBehaviour
     {
         audioSource = GameObject.FindGameObjectWithTag("S_SoundFX").GetComponent<AudioSource>();
         myLight = GameObject.FindGameObjectWithTag("Flashlight").GetComponent<Light>();
+        myLight.intensity = 12f;
 
     }
     public void OnTriggerEnter(Collider other)
