@@ -9,8 +9,8 @@ public class EnterTheDH : MonoBehaviour {
     {
         if (col.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene("6HallWay1");
-            LoadLevel.HallWay = true;
+            SceneManager.LoadScene("5Dining Room");
+            LoadLevel.DiningRoom = true;
         }
     }
 }
