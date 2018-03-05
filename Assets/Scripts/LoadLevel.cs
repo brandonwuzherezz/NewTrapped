@@ -137,7 +137,7 @@ public class LoadLevel : MonoBehaviour {
     }
     void SpawnOutsideBallHall()
     {//spawn in Hallway from Ballroom
-        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-10.21f, -0.09485483f, 12.76002f);
+		GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-1.07f, -0.1842351f, -23.96999f);
         BallHall = false;
     }
     void SpawnOutsideBallroomB()
