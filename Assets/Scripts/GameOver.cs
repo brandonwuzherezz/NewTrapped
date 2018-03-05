@@ -18,7 +18,7 @@ public class GameOver : MonoBehaviour {
             ActivateFlashlight.hasFlashlight = false;
             ActivateFlashlight.isFlashlightDestroyed = false;
             BatteryManager.battery = 0;
-           SceneManager.LoadScene("Courtyard");
+           SceneManager.LoadScene("1Courtyard");
         }
     }
 }
