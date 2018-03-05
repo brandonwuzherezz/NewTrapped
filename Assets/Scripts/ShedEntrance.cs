@@ -9,8 +9,8 @@ public class ShedEntrance : MonoBehaviour {
 	{
 		if (col.gameObject.tag == "Player")
 		{
-			SceneManager.LoadScene("Shed");
-			GameObject.FindGameObjectWithTag("Load").GetComponent<LoadLevel>().SetShedTrue();
+			SceneManager.LoadScene("2Shed");
+            LoadLevel.ShedDoor = true ;
 		}
 	}
 }
