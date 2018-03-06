@@ -16,6 +16,10 @@ public class LoadLevel : MonoBehaviour {
     public static bool BallHall = false;
     public static bool BallroomB = false;
     public static bool KitchenB = false;
+    public static bool BallroomC = false;
+    public static bool BallroomD = false;
+    public static bool SFH = false;
+    public static bool Patio = false;
 
     void Start() {
         Scene currentScene = SceneManager.GetActiveScene();
@@ -136,19 +140,29 @@ public class LoadLevel : MonoBehaviour {
         Ballroom = false;
     }
     void SpawnOutsideBallHall()
-    {//spawn in Hallway from Ballroom
+    {//spawn in Ballroom from BallHall
 		GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-1.07f, -0.1842351f, -23.96999f);
         BallHall = false;
     }
     void SpawnOutsideBallroomB()
-    {//spawn in Ballroom from Ball
+    {//spawn in BallHall from Ballroom
         GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-10.21f, -0.09485483f, 12.76002f);
         BallroomB = false;
     }
     void SpawnOutsideKitchenB()
     {//spawn in Ballroom from Kitchen
-        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-13.81001f, -0.1842351f, -7.590008f);
+        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-14.44f, -0.095f, -7.79f);
         KitchenB = false;
+    }
+    void SpawnOutsideBallroomC()
+    {//spawn in Second Floor Hallway from Ballroom
+        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-10.21f, -0.09485483f, 12.76002f);
+        BallroomC = false;
+    }
+    void SpawnOutsideBallroomD()
+    {//spawn in Patio from Ballroom
+        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-10.21f, -0.09485483f, 12.76002f);
+        BallroomD = false;
     }
 }
 //-13.81001f, -0.1842351f, -7.590008f
