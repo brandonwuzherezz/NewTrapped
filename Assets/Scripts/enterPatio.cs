@@ -10,7 +10,7 @@ public class enterPatio : MonoBehaviour {
         if (col.gameObject.tag == "Player")
         {
             SceneManager.LoadScene("Patio");
-            LoadLevel.BallroomD = true;
+            LoadLevel.Patio = true;
         }
     }
 }

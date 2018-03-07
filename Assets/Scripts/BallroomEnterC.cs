@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class enterSecondfloorHW : MonoBehaviour {
+public class BallroomEnterC : MonoBehaviour {
 
     void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene("secondFloorHallway");
-            LoadLevel.SFH = true;
+            SceneManager.LoadScene("Ballroom");
+            LoadLevel.BallroomC = true;
         }
-    } 
+    }
 }
