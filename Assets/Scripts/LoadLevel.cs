@@ -22,6 +22,9 @@ public class LoadLevel : MonoBehaviour {
     public static bool Patio = false;
     public static bool SFH = false;
     public static bool BSHB = false;
+    public static bool SFHB = false;
+    public static bool SFHC = false;
+
 
     void Start() {
         Scene currentScene = SceneManager.GetActiveScene();
@@ -129,16 +132,30 @@ public class LoadLevel : MonoBehaviour {
         }
         if (BSHB == true)
         {
-            if (sceneName == "Ballroom_secondHallway")
+            if (sceneName == "secondFloorHallway")
             {
                 SpawnOutsideBSHB();
             }
         }
         if (SFH == true)
         {
-            if (sceneName == "secondFloorHallway")
+            if (sceneName == "Ballroom_secondHallway")
             {
                 SpawnOutsideSFH();
+            }
+        }
+        if (SFHB == true)
+        {
+            if (sceneName == "secondFloorHallway")
+            {
+                SpawnOutsideCloset1();
+            }
+        }
+        if (SFHC == true)
+        {
+            if (sceneName == "secondFloorHallway")
+            {
+                SpawnOutsideCloset2();
             }
         }
     }
@@ -220,12 +237,22 @@ public class LoadLevel : MonoBehaviour {
     }
     void SpawnOutsideBSHB()
     {//spawn in SFH from BSH
-        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-13.6f, -0.09485483f, -1.729955f);//23.25f, -0.095f, 0.86f
+        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(23.25f, -0.095f, 0.86f);//23.25f, -0.095f, 0.86f
         BSHB = false;
     }
     void SpawnOutsideSFH()
     {//spawn in BSH from SFH
-        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(23.25f, -0.095f, 0.86f);//-13.6f, -0.09485483f, -1.729955f
+        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-13.6f, -0.09485483f, -1.729955f);//-13.6f, -0.09485483f, -1.729955f
         SFH = false;
+    }
+    void SpawnOutsideCloset1()
+    {//spawn in SFH from Closet1
+        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(16.95003f, -0.09485483f, 2.99427f);//16.95003f
+        SFHB = false;
+    }
+    void SpawnOutsideCloset2()
+    {//spawn in SFH from Closet2
+        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-7.269984f, -0.09485483f, 2.99427f);//-7.269984f
+        SFHC = false;
     }
 }
