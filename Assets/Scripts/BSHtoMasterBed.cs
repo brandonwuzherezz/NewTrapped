@@ -3,16 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Bedroom1ToHallway : MonoBehaviour
-{
+public class BSHtoMasterBed : MonoBehaviour {
 
     void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene("secondFloorHallway");  //Don't know Jay's Hallway name
-            LoadLevel.Bedroom1B = true;
+            SceneManager.LoadScene("MasterBedroom");
+            LoadLevel.BSHC = true;
         }
     }
 }
-

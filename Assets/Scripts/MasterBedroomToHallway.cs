@@ -9,8 +9,8 @@ public class MasterBedroomToHallway : MonoBehaviour {
     {
         if (col.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene("Hallway");
-            LoadLevel.MasterBedroomC = true;
+            SceneManager.LoadScene("Ballroom_secondHallway");
+            //LoadLevel.MasterBedroomC = true;
         }
     }
 }

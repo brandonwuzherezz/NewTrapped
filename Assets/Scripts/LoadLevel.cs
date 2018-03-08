@@ -43,6 +43,7 @@ public class LoadLevel : MonoBehaviour
     public static bool BSHB = false;
     public static bool SFHB = false;
     public static bool SFHC = false;
+    public static bool BSHC = false;
 
 
     void Start() {
@@ -125,16 +126,16 @@ public class LoadLevel : MonoBehaviour
 
         //Connections from Manuel's levels
 
-/*
-        if (Hallway1 == true)
+
+        if (Bedroom1B == true)
         {
-            if(sceneName == "Bedroom1")
+            if(sceneName == "secondFloorHallway")
             {
-                SpawnOutsideHallway1();
+                SpawnOutsideBedroom1B();
             }
         }
 
-*/
+
 
         if (Bedroom1A == true)
         {
@@ -250,15 +251,15 @@ public class LoadLevel : MonoBehaviour
                
               
                 */
-        /*    if (Hallway2 == true)
+            if (BSHC == true)
             {
-                if (sceneName == "MasterBedroom")
+                if (sceneName == "Ballroom_secondHallway")
                 {
-                    SpawnOutsideHallway2();
+                SpawnOutsideMasterBedroomC();
                 }
             }
 
-        */
+        
 
         if (BallroomC == true)
         {
@@ -393,15 +394,15 @@ public class LoadLevel : MonoBehaviour
         GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-14.16011f, -0.1651622f, -15.50018f);
         Bedroom1A = false;
     }
-/* 
+
     
     void SpawnOutsideBedroom1B()
-    {//Spawn in Hallway1 from Bedroom1
-        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3();
+    {//Spawn in SFH from Bedroom1
+        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-13.4881f, -0.09485483f, 0.86f);
         Bedroom1B = false;
     }
 
-*/
+
 
     void SpawnOutsideBedroom2()
     {//Spawn in Bathroom from Bedroom2
@@ -433,15 +434,15 @@ public class LoadLevel : MonoBehaviour
         MasterBedroomB = false;
     }
 
- /* 
+ 
    
     void SpawnOutsideMasterBedroomC()
-    {//Spawn in Hallway2 from MasterBedroom
-        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3();
+    {//Spawn in SFH from MasterBedroom
+        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-9.539992f, -0.1148548f, -5.369955f);
         MasterBedroomC = false;
     }
 
-*/
+
 
     void SpawnOutsideMasterBedroomD()
     {//Spawn in Library from MasterBedroom
