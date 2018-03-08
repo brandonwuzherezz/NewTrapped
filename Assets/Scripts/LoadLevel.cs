@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class LoadLevel : MonoBehaviour
 {
+    //Brandon
     public static bool ShedDoor = false;
     public static bool FoyerCloset = false;
     public static bool DiningRoom = false;
@@ -18,6 +19,7 @@ public class LoadLevel : MonoBehaviour
     public static bool BallHall = false;
     public static bool BallroomB = false;
     public static bool KitchenB = false;
+    //Manuel
     public static bool Bedroom1A = false;
     public static bool Bedroom1B = false;
     public static bool Bedroom2 = false;
@@ -32,6 +34,7 @@ public class LoadLevel : MonoBehaviour
     public static bool MasterCloset = false;
     public static bool Library = false;
     public static bool Vault = false;
+    //Jay
     public static bool BallroomC = false;
     public static bool BallroomD = false;
     public static bool BSH = false;
@@ -135,97 +138,22 @@ public class LoadLevel : MonoBehaviour
 
         if (Bedroom1A == true)
         {
-            if (sceneName == "Bathroom")
+            print("here");
+            if (sceneName == "Bedroom1")
             {
+                
                 SpawnOutsideBedroom1A();
             }
         }
-
-/*        if(Bedroom1B == true)
-        {
-            if (sceneName == "Hallway1")
-            {
-                SpawnOutsideBedroom1B();
-            }
-        }
-*/
+        //Spawn in Bathroom after enter bedroom2
         if (Bedroom2 == true)
         {
-            if (sceneName == "Bathroom") 
+            if (sceneName == "Bathroom")
             {
                 SpawnOutsideBedroom2();
             }
         }
-        if (BathroomA == true)
-        {
-            if (sceneName == "Bedroom1")
-            {
-                SpawnOutsideBathroomA();
-            }
-        }
-
-        if (BathroomB == true)
-        {
-            if (sceneName == "Bedroom2")
-            {
-                SpawnOutsideBathroomB();
-            }
-        }
-
-        if (MasterBedroomA == true)
-        {
-            if (sceneName == "MasterBathroom")
-            {
-                SpawnOutsideMasterBedroomA();
-            }
-        }
-
-        if (MasterBedroomB == true)
-        {
-            if (sceneName == "MasterCloset")
-            {
-                SpawnOutsideMasterBedroomB();
-            }
-        }
-
-        /*        if (MasterBedroomC == true)
-                {
-                    if (sceneName == "Hallway2")
-                    {
-                        SpawnOutsideMasterBedroomC();
-                    }
-                }
-                */
-        if (MasterBedroomD == true)
-        {
-            if (sceneName == "Library")
-            {
-                SpawnOutsideMasterBedroomD();
-            }
-        }
-
-        if(MasterBedroomE == true)
-        {
-            if (sceneName == "Vault")
-            {
-                SpawnOutsideMasterBedroomE();
-            }
-        }
-
-        if (MasterBathroom == true)
-        {
-            if (sceneName == "MasterBedroom")
-            {
-                SpawnOutsideMasterBathroom();
-            }
-        }
-        if (MasterCloset == true)
-        {
-            if (sceneName == "MasterBedroom")
-            {
-                SpawnOutsideMasterCloset();
-            }
-        }
+        //Spawn in MB after entering the Libarary
         if (Library == true)
         {
             if (sceneName == "MasterBedroom")
@@ -233,6 +161,24 @@ public class LoadLevel : MonoBehaviour
                 SpawnOutsideLibrary();
             }
         }
+        //Spawn in MB after entering the MC
+        if (MasterCloset == true)
+        {
+            if (sceneName == "MasterBedroom")
+            {
+                SpawnOutsideMasterCloset();
+            }
+
+        }
+        //Spawn in MB after entering the MasterBathroom
+        if (MasterBathroom == true)
+        {
+            if (sceneName == "MasterBedroom")
+            {
+                SpawnOutsideMasterBathroom();
+            }
+        }
+        //Spawn in MB after entering the Vault
         if (Vault == true)
         {
             if (sceneName == "MasterBedroom")
@@ -240,16 +186,79 @@ public class LoadLevel : MonoBehaviour
                 SpawnOutsideVault();
             }
         }
+        /*        if(Bedroom1B == true)
+                {
+                    if (sceneName == "Hallway1")
+                    {
+                        SpawnOutsideBedroom1B();
+                    }
+                }
 
-    /*    if (Hallway2 == true)
-        {
-            if (sceneName == "MasterBedroom")
+
+                if (BathroomA == true)
+                {
+                    if (sceneName == "Bedroom1")
+                    {
+                        SpawnOutsideBathroomA();
+                    }
+                }
+
+
+
+                if (MasterBedroomA == true)
+                {
+                    if (sceneName == "MasterBathroom")
+                    {
+                        SpawnOutsideMasterBedroomA();
+                    }
+                }
+
+                if (MasterBedroomB == true)
+                {
+                    if (sceneName == "MasterCloset")
+                    {
+                        SpawnOutsideMasterBedroomB();
+                    }
+                }
+
+                       if (MasterBedroomC == true)
+                        {
+                            if (sceneName == "Hallway2")
+                            {
+                                SpawnOutsideMasterBedroomC();
+                            }
+                        }
+
+                if (MasterBedroomD == true)
+                {
+                    if (sceneName == "Library")
+                    {
+                        SpawnOutsideMasterBedroomD();
+                    }
+                }
+
+                if(MasterBedroomE == true)
+                {
+                    if (sceneName == "Vault")
+                    {
+                        SpawnOutsideMasterBedroomE();
+                    }
+                }
+
+                
+               
+               
+              
+                */
+        /*    if (Hallway2 == true)
             {
-                SpawnOutsideHallway2();
+                if (sceneName == "MasterBedroom")
+                {
+                    SpawnOutsideHallway2();
+                }
             }
-        }
 
-    */
+        */
 
         if (BallroomC == true)
         {
@@ -365,7 +374,7 @@ public class LoadLevel : MonoBehaviour
     }
     void SpawnOutsideKitchenB()
     {//spawn in Ballroom from Kitchen
- GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-14.44f, -0.095f, -7.79f);
+        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-14.44f, -0.095f, -7.79f);
         KitchenB = false;
     }
 
@@ -378,10 +387,10 @@ public class LoadLevel : MonoBehaviour
         }
 
     */
-
+    /*Manuels Code */
     void SpawnOutsideBedroom1A()
     {//Spawn in Bathroom from Bedroom1
-        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-1.17f, -0.1651627f, 19.39999f);
+        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-14.16011f, -0.1651622f, -15.50018f);
         Bedroom1A = false;
     }
 /* 
@@ -448,13 +457,13 @@ public class LoadLevel : MonoBehaviour
 
     void SpawnOutsideMasterBathroom()
     {//Spawn in MasterBedroom from MasterBathroom
-        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(38.26f, -0.1651627f, -13.89f);
+        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(41.50027f, -0.1651627f, -13.24001f);
         MasterBathroom = false;
     }
 
     void SpawnOutsideMasterCloset()
     {//Spawn in MasterBedroom from MasterCloset
-        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(38.26f, -0.1651627f, 19.65f);
+        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(41.06001f, -0.1651627f, 19.65f);
         MasterCloset = false;
     }
 
