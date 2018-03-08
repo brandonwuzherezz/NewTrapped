@@ -308,7 +308,7 @@ public class LoadLevel : MonoBehaviour
 
     void SpawnOutsideBathroomB()
     {//Spawn in Bedroom2 from Bathroom
-        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-2.99f, 0.82f,17.32f);
+        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-2.99f, 0f,17.32f);
         Bathroom = false;
     }
 
@@ -336,44 +336,44 @@ public class LoadLevel : MonoBehaviour
 
     void SpawnOutsideMasterBedroomD()
     {//Spawn in Library from MasterBedroom
-        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-45.37f, -0.16f, 12f);
+        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-45.37f, 0f, 12f);
         MasterBedroom = false;
     }
 
     void SpawnOutsideMasterBedroomE()
     {//Spawn in Vault from MasterBedroom
-        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3();
+        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-1.07f, 0f, 25.96f);
         MasterBedroom = false;
     }
 
     void SpawnOutsideMasterBathroom()
     {//Spawn in MasterBedroom from MasterBathroom
-        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3();
+        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(38.26f, 0f, -13.89f);
         MasterBathroom = false;
     }
 
     void SpawnOutsideMasterCloset()
     {//Spawn in MasterBedroom from MasterCloset
-        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3();
+        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(38.26f, 0f, 19.65f);
         MasterCloset = false;
     }
 
     void SpawnOutsideLibrary()
     {//Spawn in MasterBedroom from Library
-        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3();
+        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(11.67f, 0f, 29.86f);
         Library = false;
     }
 
     void SpawnOutsideVault()
     {//Spawn in MasterBedroom from Vault
-        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3();
+        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(31.86f, 0f, -28.36f);
         Vault = false;
     }
 
 /*
     void SpawnOutsideHallway2()
     {//Spawn in MasterBedroom from Hallway
-        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3();
+        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-1.07f, 0f, 25.96f);
         Hallway2 = false;
     }
 */
