@@ -11,7 +11,7 @@ public class MasterBedroomToMasterCloset : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             SceneManager.LoadScene("MasterCloset");
-            LoadLevel.MasterBedroom = true;
+            LoadLevel.MasterBedroomB = true;
         }
     }
 }

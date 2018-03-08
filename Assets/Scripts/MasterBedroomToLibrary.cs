@@ -11,7 +11,7 @@ public class MasterBedroomToLibrary : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             SceneManager.LoadScene("Library");
-            LoadLevel.MasterBedroom = true;
+            LoadLevel.MasterBedroomD = true;
         }
     }
 }

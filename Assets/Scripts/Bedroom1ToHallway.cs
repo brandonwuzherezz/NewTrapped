@@ -11,7 +11,7 @@ public class Bedroom1ToHallway : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             //SceneManager.LoadScene("Hallway");  Don't know Jay's Hallway name
-            LoadLevel.Bedroom1 = true;
+            LoadLevel.Bedroom1B = true;
         }
     }
 }

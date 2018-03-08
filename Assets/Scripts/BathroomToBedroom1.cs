@@ -10,7 +10,7 @@ public class BathroomToBedroom1 : MonoBehaviour {
         if (col.gameObject.tag == "Player")
         {
             SceneManager.LoadScene("Bedroom1");
-            LoadLevel.Bathroom = true;
+            LoadLevel.BathroomA = true;
         }
     }
 }

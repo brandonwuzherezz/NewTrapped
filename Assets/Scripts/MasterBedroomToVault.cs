@@ -11,7 +11,7 @@ public class MasterBedroomToVault : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             SceneManager.LoadScene("Vault");
-            LoadLevel.MasterBedroom = true;
+            LoadLevel.MasterBedroomE = true;
         }
     }
 }

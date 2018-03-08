@@ -11,7 +11,7 @@ public class MasterBedroomToMasterBathroom : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             SceneManager.LoadScene("MasterBathroom");
-            LoadLevel.MasterBedroom = true;
+            LoadLevel.MasterBedroomA = true;
         }
     }
 }
