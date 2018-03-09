@@ -46,9 +46,9 @@ public class Shadows : MonoBehaviour
             //Change Texture
             currentRenderer.material.mainTexture = normalTexture;
             //Turn off trigger of Box Collider
-            Destroy(MyBox);
+            MyBox.isTrigger = false;
             //Activate MeshCollider
-            myMeshC.enabled = true;
+            //myMeshC.enabled = true;
             //Turn off Shadow Movement
             Destroy(myShadowM);
             //Turn off the Rigid Body
