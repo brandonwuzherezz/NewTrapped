@@ -412,7 +412,7 @@ public class LoadLevel : MonoBehaviour
 
     void SpawnOutsideBathroomA()
     {//Spawn in Bedroom 1 from Bathroom
-        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-29.14f, -0.1651627f, -8.4f);
+        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-14.75026f, -0.1651627f, -12.91045f);
         BathroomA = false;
     }
 
@@ -430,7 +430,7 @@ public class LoadLevel : MonoBehaviour
 
     void SpawnOutsideMasterBedroomB()
     {//Spawn in MasterCloset from MasterBedroom
-        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-1.46f, -0.1651627f, 16.48f);
+        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-1.790001f, -0.1651627f, 16.42f);
         MasterBedroomB = false;
     }
 
@@ -438,7 +438,7 @@ public class LoadLevel : MonoBehaviour
    
     void SpawnOutsideMasterBedroomC()
     {//Spawn in SFH from MasterBedroom
-        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-9.539992f, -0.1148548f, -5.369955f);
+        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-9.73f, -0.09485483f, -3.89f);
         MasterBedroomC = false;
     }
 
