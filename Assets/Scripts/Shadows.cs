@@ -19,7 +19,10 @@ public class Shadows : MonoBehaviour
     public float Xpos;
     public float Ypos;
     public float Zpos;
-
+    public static float Xp;
+    public static float Yp;
+    public static float Zp;
+    public bool StopAtPosition = false;
     public BoxCollider MyBox;
     public Shadow_Movement myShadowM;
     public MeshRenderer currentRenderer;
@@ -54,7 +57,9 @@ public class Shadows : MonoBehaviour
             Destroy(myShadowM);
             //Turn off the Rigid Body
             Destroy(myRigid);
-            transform.position = new Vector3(Xpos, Ypos, Zpos);
+            //move positon
+            
+            transform.position = new Vector3(Xp, Yp, Zp);
             //Turn off shadow audio
             myAudio.mute = true;
             myAudio.enabled = false;
@@ -82,7 +87,20 @@ public class Shadows : MonoBehaviour
                 Destroy(myShadowM);
                 //Turn off the Rigid Body
                 Destroy(myRigid);
-                transform.position = new Vector3(Xpos, Ypos, Zpos);
+
+                if (StopAtPosition == true)
+                {
+                    transform.position = new Vector3(Xpos, Ypos, Zpos);
+                    Xp = Xpos;
+                    Yp = Ypos;
+                    Zp = Zpos;
+                }
+                else
+                {
+                    Xp = transform.position.x;
+                    Yp = transform.position.y;
+                    Zp = transform.position.z;
+                }
                 audioSource.Play();
                 //Change Tag
                 transform.tag = "Untagged";
