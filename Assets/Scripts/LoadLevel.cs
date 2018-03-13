@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class LoadLevel : MonoBehaviour
 {
+ 
     //Brandon
     public static bool ShedDoor = false;
     public static bool FoyerCloset = false;

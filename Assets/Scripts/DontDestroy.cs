@@ -3,9 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DontDestroy : MonoBehaviour {
-
+    public static bool isCreated = false;
     void Awake()
     {
-        DontDestroyOnLoad(transform.gameObject);
+        if (isCreated == false)
+        {
+            DontDestroyOnLoad(transform.gameObject);
+            isCreated = true;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

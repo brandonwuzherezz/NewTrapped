@@ -26,6 +26,7 @@ public class Shadows : MonoBehaviour
     public Shadows myShadow;
     public Rigidbody myRigid;
     public MeshCollider myMeshC;
+    public AudioSource myAudio;
     public static bool ShadowDestroyed = false;
     public static List<string> DeletedShadows = new List<string>();
     void Start()
@@ -40,7 +41,7 @@ public class Shadows : MonoBehaviour
         myShadow = this.GetComponent<Shadows>();
         myRigid = this.GetComponent<Rigidbody>();
         myMeshC = this.GetComponent<MeshCollider>();
-        
+        myAudio = this.GetComponent<AudioSource>();
         if (DeletedShadows.Contains(gameObject.name)){
             myMeshC.enabled = false;
             //Change Texture
@@ -54,6 +55,9 @@ public class Shadows : MonoBehaviour
             //Turn off the Rigid Body
             Destroy(myRigid);
             transform.position = new Vector3(Xpos, Ypos, Zpos);
+            //Turn off shadow audio
+            myAudio.mute = true;
+            myAudio.enabled = false;
             //Change Tag
             transform.tag = "Untagged";
             // Turn off Shadow Script 
@@ -82,6 +86,9 @@ public class Shadows : MonoBehaviour
                 audioSource.Play();
                 //Change Tag
                 transform.tag = "Untagged";
+                //turn off audio tag
+                myAudio.mute = true;
+                myAudio.enabled = false;
                 // Turn off Shadow Script 
                 Destroy(myShadow);
                 myLight.color = wcolor;
