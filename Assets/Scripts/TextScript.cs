@@ -4,7 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class TextScript : MonoBehaviour {
-
+    public void Update()
+    {
+        if(Shadows.DeletedShadows.Contains("TrappedFountain"))
+        {
+            Destroy(gameObject);
+        }
+    }
     // Use this for initialization
     public void OnTriggerEnter(Collider other)
     {
