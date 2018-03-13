@@ -84,6 +84,7 @@ public class Shadows : MonoBehaviour
                 transform.tag = "Untagged";
                 // Turn off Shadow Script 
                 Destroy(myShadow);
+                myLight.color = wcolor;
             }
         }
     }
