@@ -63,7 +63,7 @@ public class Shadow_Movement : MonoBehaviour {
 
 
         GetComponent<Rigidbody>().velocity = Velocity;
-        //transform.LookAt(Target);
+        transform.LookAt(Target);
 
     }
 }
