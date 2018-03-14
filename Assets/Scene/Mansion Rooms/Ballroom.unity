@@ -833,21 +833,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 860567448}
-  EnemyDistance: 0
+  EnemyDistance: 5
   myLight: {fileID: 1539271035}
   duration: 0.025
   ccolor: {r: 0, g: 0, b: 0, a: 0}
-  wcolor: {r: 1, g: 1, b: 1, a: 1}
+  wcolor: {r: 1, g: 1, b: 0.78431374, a: 1}
   normalTexture: {fileID: 0}
   Xpos: 0
-  Ypos: 0
+  Ypos: -200
   Zpos: 0
+  StopAtPosition: 0
   MyBox: {fileID: 0}
   myShadowM: {fileID: 0}
   currentRenderer: {fileID: 0}
   myShadow: {fileID: 0}
   myRigid: {fileID: 0}
   myMeshC: {fileID: 0}
+  myAudio: {fileID: 0}
 --- !u!114 &192306036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -867,12 +869,106 @@ MonoBehaviour:
   - {fileID: 1116480475}
   Speed: 7
   curWayPoint: 0
-  doPatrol: 1
+  doPatrol: 0
   Target: {x: 0, y: 0, z: 0}
   MoveDirection: {x: 0, y: 0, z: 0}
   Velocity: {x: 0, y: 0, z: 0}
   Player: {fileID: 860567448}
   aggroDist: 5
+--- !u!64 &192306041
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 192306032}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 87cc67c29c7caf649a18c8494c2a5591, type: 3}
+--- !u!82 &192306042
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 192306032}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &246267351
 GameObject:
   m_ObjectHideFlags: 0
@@ -1201,7 +1297,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 286259021}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.86, y: 0, z: -14.67}
+  m_LocalPosition: {x: 7.86, y: -0.084, z: -14.707}
   m_LocalScale: {x: 0.0767641, y: 1, z: 0.072037034}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4213,21 +4309,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 860567448}
-  EnemyDistance: 0
+  EnemyDistance: 5
   myLight: {fileID: 1539271035}
   duration: 0.025
   ccolor: {r: 0, g: 0, b: 0, a: 0}
-  wcolor: {r: 1, g: 1, b: 1, a: 1}
+  wcolor: {r: 1, g: 1, b: 0.78431374, a: 1}
   normalTexture: {fileID: 0}
   Xpos: 0
-  Ypos: 0
+  Ypos: -200
   Zpos: 0
+  StopAtPosition: 0
   MyBox: {fileID: 0}
   myShadowM: {fileID: 0}
   currentRenderer: {fileID: 0}
   myShadow: {fileID: 0}
   myRigid: {fileID: 0}
   myMeshC: {fileID: 0}
+  myAudio: {fileID: 0}
 --- !u!114 &1042786041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4252,7 +4350,7 @@ MonoBehaviour:
   MoveDirection: {x: 0, y: 0, z: 0}
   Velocity: {x: 0, y: 0, z: 0}
   Player: {fileID: 860567448}
-  aggroDist: 10
+  aggroDist: 5
 --- !u!54 &1042786042
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4280,6 +4378,134 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.24587, y: 8.031985, z: 1.561714}
   m_Center: {x: 0.00052416476, y: 5.896929, z: -0.28085834}
+--- !u!64 &1042786046
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1042786039}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 0}
+--- !u!23 &1042786047
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1042786039}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!82 &1042786048
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1042786039}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &1047085085
 GameObject:
   m_ObjectHideFlags: 0
@@ -5936,21 +6162,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 860567448}
-  EnemyDistance: 0
+  EnemyDistance: 5
   myLight: {fileID: 1539271035}
   duration: 0.025
   ccolor: {r: 0, g: 0, b: 0, a: 0}
-  wcolor: {r: 1, g: 1, b: 1, a: 1}
+  wcolor: {r: 1, g: 1, b: 0.78431374, a: 1}
   normalTexture: {fileID: 0}
   Xpos: 0
-  Ypos: 0
+  Ypos: -200
   Zpos: 0
+  StopAtPosition: 1
   MyBox: {fileID: 0}
   myShadowM: {fileID: 0}
   currentRenderer: {fileID: 0}
   myShadow: {fileID: 0}
   myRigid: {fileID: 0}
   myMeshC: {fileID: 0}
+  myAudio: {fileID: 0}
 --- !u!65 &1485810149
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5978,6 +6206,100 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &1485810155
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1485810146}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 87cc67c29c7caf649a18c8494c2a5591, type: 3}
+--- !u!82 &1485810156
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1485810146}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1001 &1497428511
 Prefab:
   m_ObjectHideFlags: 0
@@ -6336,7 +6658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashlightToggleKey: 102
-  maxBatteryLife: 50
+  maxBatteryLife: 150
   isActive: 0
   flashlightbar: {fileID: 655491103}
   text: {fileID: 730384635}
@@ -6351,7 +6673,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 0.78431374, a: 1}
   m_Intensity: 12
   m_Range: 21.715515
   m_SpotAngle: 50
@@ -8150,7 +8472,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2057886185}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: -0.567, z: -25.63}
+  m_LocalPosition: {x: -1, y: -0.588, z: -25.608}
   m_LocalScale: {x: 1.4902436, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
