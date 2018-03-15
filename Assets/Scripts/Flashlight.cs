@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Flashlight : MonoBehaviour
 {
 
-    public KeyCode flashlightToggleKey = KeyCode.Mouse0;
+    public KeyCode flashlightToggleKey = KeyCode.F;
     public float maxBatteryLife;
     public static int totalBatteries = 0;
     public static float batteryLife ;
@@ -64,8 +64,8 @@ public class Flashlight : MonoBehaviour
             //Vector3 lookPos = Camera.main.ScreenToWorldPoint(mousePos); // convert to position in the world
             //lookPos = lookPos - transform.position; // offset by the position of flashlight 
             float angle = Mathf.Atan2(mousePos.x - (Screen.width / 2), mousePos.z - (Screen.height / 2)) * Mathf.Rad2Deg; // arctan b/w x and y            
-            //Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.up); //rotate based on angle and axis(forward = z and up = y)      
-            transform.rotation = Quaternion.AngleAxis(angle, Vector3.up);//=  Quaternion.Slerp(transform.rotation, rotation, speed * Time.deltaTime);
+            Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.up); //rotate based on angle and axis(forward = z and up = y)      
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, speed * Time.deltaTime);
             //Debug.Log("lookPos: " + mousePos);
             if (batteryLife <= 0)
             {
