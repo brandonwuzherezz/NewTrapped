@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Flashlight : MonoBehaviour
 {
 
-    public KeyCode flashlightToggleKey = KeyCode.F;
+    public KeyCode flashlightToggleKey = KeyCode.Mouse0;
     public float maxBatteryLife;
     public static int totalBatteries = 0;
     public static float batteryLife ;
