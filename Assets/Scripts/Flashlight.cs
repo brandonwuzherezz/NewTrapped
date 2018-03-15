@@ -50,6 +50,7 @@ public class Flashlight : MonoBehaviour
         {
 
             myLight.enabled = true;
+            SpotlightManager.mySpotLight.enabled = true;
 
             batteryLife -= 0.1f;
 
@@ -79,6 +80,7 @@ public class Flashlight : MonoBehaviour
         else
         {
             myLight.enabled = false;
+            SpotlightManager.mySpotLight.enabled = false;
             SetBoxColliders(false);
         }
         

@@ -7,7 +7,7 @@ public class SpotlightManager : MonoBehaviour {
 
     public static bool noBatteries;
 
-    public Light myLight;
+    public static Light mySpotLight;
 
     public float maxIntensity = 10f;
 
@@ -20,7 +20,8 @@ public class SpotlightManager : MonoBehaviour {
     void Start () {
 
         noBatteries = false;
-        myLight = GetComponent<Light>();
+        mySpotLight = GetComponent<Light>();
+        mySpotLight.enabled = false;
 
     }
 	
@@ -31,14 +32,14 @@ public class SpotlightManager : MonoBehaviour {
         {
 
             float t = Mathf.PingPong(Time.time,duration);
-            myLight.color = Color.Lerp(rcolor, wcolor, t);
-            myLight.intensity -= 0.05f;
+            mySpotLight.color = Color.Lerp(rcolor, wcolor, t);
+            mySpotLight.intensity -= 0.05f;
             
         }
         else
         {
-            myLight.intensity = maxIntensity;
-            myLight.color = wcolor;
+            mySpotLight.intensity = maxIntensity;
+            mySpotLight.color = wcolor;
 
         }
 		

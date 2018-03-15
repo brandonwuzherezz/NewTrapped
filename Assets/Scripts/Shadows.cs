@@ -8,7 +8,8 @@ public class Shadows : MonoBehaviour
     public Transform Player;
     public float EnemyDistance;
 
-    public Light myLight;
+    //public Light myLight;
+    //public Light mySpotLight;
 
     public float duration = .025f;
 
@@ -35,8 +36,8 @@ public class Shadows : MonoBehaviour
     void Start()
     {
         audioSource = GameObject.FindGameObjectWithTag("S_SoundFX").GetComponent<AudioSource>();
-        myLight = GameObject.FindGameObjectWithTag("Flashlight").GetComponent<Light>();
-        myLight.intensity = 12f;
+        //myLight = GameObject.FindGameObjectWithTag("Flashlight").GetComponent<Light>();
+        //mySpotLight = GameObject.FindGameObjectWithTag("Spotlight").GetComponent<Light>();
         currentRenderer = this.GetComponent<MeshRenderer>();
         print(currentRenderer);
         myShadowM = this.GetComponent<Shadow_Movement>();
@@ -109,7 +110,8 @@ public class Shadows : MonoBehaviour
                 myAudio.enabled = false;
                 // Turn off Shadow Script 
                 Destroy(myShadow);
-                myLight.color = wcolor;
+                Flashlight.myLight.color = wcolor;
+                SpotlightManager.mySpotLight.color = wcolor;
             }
         }
     }
@@ -122,16 +124,19 @@ public class Shadows : MonoBehaviour
         if (distance < EnemyDistance)
         {
 
-            myLight.enabled = true;
+            Flashlight.myLight.enabled = true;
+            SpotlightManager.mySpotLight.enabled = true;
             float t = Mathf.PingPong(Time.time, duration);
-            myLight.color = Color.Lerp(ccolor, wcolor, t);
+            Flashlight.myLight.color = Color.Lerp(ccolor, wcolor, t);
+            SpotlightManager.mySpotLight.color = Color.Lerp(ccolor, wcolor, t);
 
 
         }
 
         else
         {
-            myLight.color = wcolor;
+            Flashlight.myLight.color = wcolor;
+            SpotlightManager.mySpotLight.color = wcolor;
         }
 
             
