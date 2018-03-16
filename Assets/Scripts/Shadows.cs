@@ -124,8 +124,8 @@ public class Shadows : MonoBehaviour
         if (distance < EnemyDistance)
         {
 
-            Flashlight.myLight.enabled = true;
-            SpotlightManager.mySpotLight.enabled = true;
+            //Flashlight.myLight.enabled = true;
+            //sSpotlightManager.mySpotLight.enabled = true;
             float t = Mathf.PingPong(Time.time, duration);
             Flashlight.myLight.color = Color.Lerp(ccolor, wcolor, t);
             SpotlightManager.mySpotLight.color = Color.Lerp(ccolor, wcolor, t);
