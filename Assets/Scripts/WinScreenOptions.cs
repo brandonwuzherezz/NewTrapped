@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameOver : MonoBehaviour {
+
+public class WinScreenOptions : MonoBehaviour {
 
 	public bool isMainMenu;
 
@@ -58,5 +59,4 @@ public class GameOver : MonoBehaviour {
 			SceneManager.LoadScene("MainMenu");
 		}
 	}
-
 }
