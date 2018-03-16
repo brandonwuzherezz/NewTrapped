@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class LoadLevel : MonoBehaviour
 {
+ 
     //Brandon
     public static bool ShedDoor = false;
     public static bool FoyerCloset = false;
@@ -391,7 +392,7 @@ public class LoadLevel : MonoBehaviour
     /*Manuels Code */
     void SpawnOutsideBedroom1A()
     {//Spawn in Bathroom from Bedroom1
-        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-14.16011f, -0.1651622f, -15.50018f);
+        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-14.74999f, -0.1651622f, -19.18f);
         Bedroom1A = false;
     }
 
