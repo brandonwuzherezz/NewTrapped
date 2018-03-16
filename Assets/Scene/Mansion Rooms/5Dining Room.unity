@@ -2856,7 +2856,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -2880,7 +2880,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!1 &428886928
 GameObject:
   m_ObjectHideFlags: 0
@@ -7787,7 +7787,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aa2f74b8b415394e9e9975bb0f7ef4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myLight: {fileID: 0}
   maxIntensity: 10
   duration: 0.5
   rcolor: {r: 1, g: 0, b: 0, a: 1}
@@ -9316,12 +9315,17 @@ Prefab:
     - target: {fileID: 114867322478435932, guid: c1069ea19b568314a8b4d211b29af5e8,
         type: 2}
       propertyPath: duration
-      value: 0.25
+      value: 0.075
       objectReference: {fileID: 0}
     - target: {fileID: 114867322478435932, guid: c1069ea19b568314a8b4d211b29af5e8,
         type: 2}
       propertyPath: wcolor.b
       value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 114867322478435932, guid: c1069ea19b568314a8b4d211b29af5e8,
+        type: 2}
+      propertyPath: EnemyDistance
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c1069ea19b568314a8b4d211b29af5e8, type: 2}
