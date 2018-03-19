@@ -50,6 +50,7 @@ public class Flashlight : MonoBehaviour
         {
 
             myLight.enabled = true;
+            SpotlightManager.mySpotLight.enabled = true;
 
             batteryLife -= 0.1f;
 
@@ -58,15 +59,14 @@ public class Flashlight : MonoBehaviour
 
 
             flashlightbar.value = batteryLife / maxBatteryLife;
-			print (flashlightbar.value);
-            Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.y); //mouse position
+			//print (flashlightbar.value);
+            Vector3 mousePos = new Vector3(Input.mousePosition.x, 0, Input.mousePosition.y); //mouse position
             //Vector3 lookPos = Camera.main.ScreenToWorldPoint(mousePos); // convert to position in the world
             //lookPos = lookPos - transform.position; // offset by the position of flashlight 
             float angle = Mathf.Atan2(mousePos.x - (Screen.width / 2), mousePos.z - (Screen.height / 2)) * Mathf.Rad2Deg; // arctan b/w x and y            
             Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.up); //rotate based on angle and axis(forward = z and up = y)      
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, speed * Time.deltaTime);
             //Debug.Log("lookPos: " + mousePos);
-
             if (batteryLife <= 0)
             {
                 myLight.enabled = false;
@@ -79,6 +79,7 @@ public class Flashlight : MonoBehaviour
         else
         {
             myLight.enabled = false;
+            SpotlightManager.mySpotLight.enabled = false;
             SetBoxColliders(false);
         }
         
