@@ -8,10 +8,15 @@ public class GameOver : MonoBehaviour {
 	public bool isMainMenu;
     public bool isRestart;
     public bool isQuit;
-
+    AudioSource audioSource;
+    public void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     private void OnMouseUp()
 	{
-		if (isMainMenu)
+        audioSource.Play();
+        if (isMainMenu)
 		{
 			Flashlight.creation = false;
 			Flashlight.totalBatteries = 0;

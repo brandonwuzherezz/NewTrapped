@@ -2,21 +2,19 @@
 #####TRAPPED ######
 ####################
 
-Welcome to the Alpha version of Trapped.
+Welcome to the Beta version of Trapped.
 
 Controls
 ------------------------
-F to activate flashlight
+MousClick to activate flashlight
 Mouse to move flashlight
 WASD to move
 
 Goal/Objective/Obstacles
 ------------------------
-Currently the game is just an exploration of the maze. Future releases
-will be playable.
+Explore the Mansion and find the room with the Bluelight.
 
 KNOW BUGS
 ------------------------
-Only way to escape game to to alt tab and quit exe at the moment.
-Or play in windowed mode
 Runs best in High to Ultra Graphics
+Anything below doesnt work as well

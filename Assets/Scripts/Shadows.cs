@@ -20,9 +20,8 @@ public class Shadows : MonoBehaviour
     public float Xpos;
     public float Ypos;
     public float Zpos;
-    public static float Xp;
-    public static float Yp;
-    public static float Zp;
+    public List<float> Coordinates = new List<float>();
+    public static Dictionary<string, List<float>> myDictionary = new Dictionary<string, List<float>>();
     public bool StopAtPosition = false;
     public BoxCollider MyBox;
     public Shadow_Movement myShadowM;
@@ -39,7 +38,7 @@ public class Shadows : MonoBehaviour
         //myLight = GameObject.FindGameObjectWithTag("Flashlight").GetComponent<Light>();
         //mySpotLight = GameObject.FindGameObjectWithTag("Spotlight").GetComponent<Light>();
         currentRenderer = this.GetComponent<MeshRenderer>();
-        print(currentRenderer);
+        //print(currentRenderer);
         myShadowM = this.GetComponent<Shadow_Movement>();
         MyBox = this.GetComponent<BoxCollider>();
         myShadow = this.GetComponent<Shadows>();
@@ -59,8 +58,10 @@ public class Shadows : MonoBehaviour
             //Turn off the Rigid Body
             Destroy(myRigid);
             //move positon
-            
-            transform.position = new Vector3(Xp, Yp, Zp);
+            Xpos = myDictionary[gameObject.name][0];
+            Ypos = myDictionary[gameObject.name][1];
+            Zpos = myDictionary[gameObject.name][2];
+            transform.position = new Vector3(Xpos, Ypos, Zpos);
             //Turn off shadow audio
             myAudio.mute = true;
             myAudio.enabled = false;
@@ -92,16 +93,21 @@ public class Shadows : MonoBehaviour
                 if (StopAtPosition == true)
                 {
                     transform.position = new Vector3(Xpos, Ypos, Zpos);
-                    Xp = Xpos;
-                    Yp = Ypos;
-                    Zp = Zpos;
                 }
                 else
                 {
-                    Xp = transform.position.x;
-                    Yp = transform.position.y;
-                    Zp = transform.position.z;
+                    Xpos = transform.position.x;
+                    Ypos = transform.position.y;
+                    Zpos = transform.position.z;
                 }
+                Coordinates.Add(Xpos);
+                Coordinates.Add(Ypos);
+                Coordinates.Add(Zpos);
+                if (!myDictionary.ContainsKey(gameObject.name))
+                {
+                    myDictionary.Add(gameObject.name, Coordinates);
+                }
+                print(gameObject.name);
                 audioSource.Play();
                 //Change Tag
                 transform.tag = "Untagged";
@@ -110,6 +116,7 @@ public class Shadows : MonoBehaviour
                 myAudio.enabled = false;
                 // Turn off Shadow Script 
                 Destroy(myShadow);
+                Flashlight.batteryLife -= 150f / 10f;
                 Flashlight.myLight.color = wcolor;
                 SpotlightManager.mySpotLight.color = wcolor;
             }
@@ -120,7 +127,7 @@ public class Shadows : MonoBehaviour
     {
 
         float distance = Vector3.Distance(transform.position, Player.transform.position);
-        print(distance);
+        //print(distance);
         if (distance < EnemyDistance)
         {
 

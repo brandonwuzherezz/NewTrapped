@@ -59,7 +59,7 @@ public class Flashlight : MonoBehaviour
 
 
             flashlightbar.value = batteryLife / maxBatteryLife;
-			print (flashlightbar.value);
+			//print (flashlightbar.value);
             Vector3 mousePos = new Vector3(Input.mousePosition.x, 0, Input.mousePosition.y); //mouse position
             //Vector3 lookPos = Camera.main.ScreenToWorldPoint(mousePos); // convert to position in the world
             //lookPos = lookPos - transform.position; // offset by the position of flashlight 
