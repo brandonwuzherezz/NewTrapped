@@ -42,6 +42,7 @@ public class ReloadLevel : MonoBehaviour {
 				    Shadows.DeletedShadows.Remove(Shadow);
 				}
             }
+            Flashlight.batteryLife = 150;
             GameOver.ResetGame = false;
         }
 	}
