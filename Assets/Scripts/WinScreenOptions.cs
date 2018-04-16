@@ -21,7 +21,6 @@ public class WinScreenOptions : MonoBehaviour {
 		{
 			Flashlight.creation = false;
 			Flashlight.totalBatteries = 0;
-			Battery.isDestroyed = false;
 			Battery.DeletedBatteries.Clear();
 			Shadows.DeletedShadows.Clear();
 			Timer.Deletedimages.Clear();
@@ -70,7 +69,6 @@ public class WinScreenOptions : MonoBehaviour {
         {
             Flashlight.creation = false;
             Flashlight.totalBatteries = 0;
-            Battery.isDestroyed = false;
             Battery.DeletedBatteries.Clear();
             Shadows.DeletedShadows.Clear();
             Timer.Deletedimages.Clear();

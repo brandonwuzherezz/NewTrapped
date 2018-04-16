@@ -6,17 +6,19 @@ public class Battery : MonoBehaviour
 {
     AudioSource audioSource;
     public int collected = 1;
-    public static bool isDestroyed = false;
     public static List<string> DeletedBatteries = new List<string>();
     void Start()
     {
         
         audioSource = GameObject.FindGameObjectWithTag("B_SoundFX").GetComponent<AudioSource>();
-        if (isDestroyed)
+      
+  
+    }
+    void Update()
+    {
+        if (DeletedBatteries.Contains(gameObject.name) && GameOver.ResetGame == false)
         {
-            if (DeletedBatteries.Contains(gameObject.name)) { 
             Destroy(gameObject);
-            }
         }
     }
     public void OnTriggerEnter(Collider other)
@@ -26,7 +28,6 @@ public class Battery : MonoBehaviour
             SpotlightManager.noBatteries = false;
             GameObject.FindGameObjectWithTag("Flashlight").GetComponent<Flashlight>().Collected(collected);
             audioSource.Play();
-            isDestroyed = true;
             DeletedBatteries.Add(gameObject.name);
             Destroy(gameObject);
         }
