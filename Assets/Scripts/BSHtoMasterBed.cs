@@ -5,12 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class BSHtoMasterBed : MonoBehaviour {
 
+    public static bool MBKey;
+
     void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.tag == "Player")
+        if (MBKey)
         {
-            SceneManager.LoadScene("MasterBedroom");
-            LoadLevel.BSHC = true;
+
+            if (col.gameObject.tag == "Player")
+            {
+                SceneManager.LoadScene("MasterBedroom");
+                LoadLevel.BSHC = true;
+            }
         }
     }
 }

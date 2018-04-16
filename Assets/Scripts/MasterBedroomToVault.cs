@@ -6,12 +6,17 @@ using UnityEngine.SceneManagement;
 public class MasterBedroomToVault : MonoBehaviour
 {
 
+    public static bool vaultKey;
+
     void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.tag == "Player")
+        if (vaultKey)
         {
-            SceneManager.LoadScene("Vault");
-            LoadLevel.MasterBedroomE = true;
+            if (col.gameObject.tag == "Player")
+            {
+                SceneManager.LoadScene("Vault");
+                LoadLevel.MasterBedroomE = true;
+            }
         }
     }
 }

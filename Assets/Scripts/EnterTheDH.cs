@@ -5,12 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class EnterTheDH : MonoBehaviour {
 
+    public static bool dhKey;
+
+
     void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.tag == "Player")
+        if (dhKey)
         {
-            SceneManager.LoadScene("5Dining Room");
-            LoadLevel.DiningRoom = true;
+            if (col.gameObject.tag == "Player")
+            {
+                SceneManager.LoadScene("5Dining Room");
+                LoadLevel.DiningRoom = true;
+            }
         }
     }
 }
