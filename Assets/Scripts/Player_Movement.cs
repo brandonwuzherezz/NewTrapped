@@ -123,6 +123,8 @@ public class Player_Movement : MonoBehaviour
          //Shadow contact kills player
         if (col.gameObject.tag == "Shadow")
         {
+            Scene currentScene = SceneManager.GetActiveScene();
+            GameOver.PreviousScene = currentScene.name;
             SceneManager.LoadScene("Scene_GameOver");
             //Destroy(GameObject.FindWithTag("Player"));
             //flashLight.isActive = true;

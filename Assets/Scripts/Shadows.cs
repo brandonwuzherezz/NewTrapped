@@ -45,31 +45,7 @@ public class Shadows : MonoBehaviour
         myRigid = this.GetComponent<Rigidbody>();
         myMeshC = this.GetComponent<MeshCollider>();
         myAudio = this.GetComponent<AudioSource>();
-        if (DeletedShadows.Contains(gameObject.name)){
-            myMeshC.enabled = false;
-            //Change Texture
-            currentRenderer.material.mainTexture = normalTexture;
-            //Turn off trigger of Box Collider
-            MyBox.isTrigger = false;
-            //Activate MeshCollider
-            //myMeshC.enabled = true;
-            //Turn off Shadow Movement
-            Destroy(myShadowM);
-            //Turn off the Rigid Body
-            Destroy(myRigid);
-            //move positon
-            Xpos = myDictionary[gameObject.name][0];
-            Ypos = myDictionary[gameObject.name][1];
-            Zpos = myDictionary[gameObject.name][2];
-            transform.position = new Vector3(Xpos, Ypos, Zpos);
-            //Turn off shadow audio
-            myAudio.mute = true;
-            myAudio.enabled = false;
-            //Change Tag
-            transform.tag = "Untagged";
-            // Turn off Shadow Script 
-            Destroy(myShadow);
-        }
+        
     }
     public void OnTriggerEnter(Collider other)
     {
@@ -125,7 +101,32 @@ public class Shadows : MonoBehaviour
 
     void Update()
     {
-
+        if (DeletedShadows.Contains(gameObject.name) && GameOver.ResetGame == false)
+        {
+            myMeshC.enabled = false;
+            //Change Texture
+            currentRenderer.material.mainTexture = normalTexture;
+            //Turn off trigger of Box Collider
+            MyBox.isTrigger = false;
+            //Activate MeshCollider
+            //myMeshC.enabled = true;
+            //Turn off Shadow Movement
+            Destroy(myShadowM);
+            //Turn off the Rigid Body
+            Destroy(myRigid);
+            //move positon
+            Xpos = myDictionary[gameObject.name][0];
+            Ypos = myDictionary[gameObject.name][1];
+            Zpos = myDictionary[gameObject.name][2];
+            transform.position = new Vector3(Xpos, Ypos, Zpos);
+            //Turn off shadow audio
+            myAudio.mute = true;
+            myAudio.enabled = false;
+            //Change Tag
+            transform.tag = "Untagged";
+            // Turn off Shadow Script 
+            Destroy(myShadow);
+        }
         float distance = Vector3.Distance(transform.position, Player.transform.position);
         //print(distance);
         if (distance < EnemyDistance)
