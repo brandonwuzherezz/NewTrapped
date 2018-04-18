@@ -41,6 +41,7 @@ public class VaultKey : MonoBehaviour {
                 MasterBedroomToVault.vaultKey = true;
                 Key.DeleteKeys.Add(gameObject.name);
                 Destroy(gameObject);
+                KeyManager.isImgOn = true;
             }
         }
     }

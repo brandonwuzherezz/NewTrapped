@@ -41,6 +41,7 @@ public class MBKey : MonoBehaviour {
                 BSHtoMasterBed.MBKey = true;
                 Key.DeleteKeys.Add(gameObject.name);
                 Destroy(gameObject);
+                KeyManager.isImgOn = true;
             }
         }
     }

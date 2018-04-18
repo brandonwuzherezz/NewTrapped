@@ -6,16 +6,37 @@ using UnityEngine.SceneManagement;
 public class EnterTheDH : MonoBehaviour {
 
     public static bool dhKey;
+    public bool inTrigger;
 
-
-    void OnTriggerEnter(Collider col)
+    public void OnTriggerEnter(Collider other)
     {
-        if (dhKey)
+        if (other.CompareTag("Player"))
         {
-            if (col.gameObject.tag == "Player")
+            inTrigger = true;
+            if (dhKey)
             {
                 SceneManager.LoadScene("5Dining Room");
                 LoadLevel.DiningRoom = true;
+                KeyManager.isImgOn = false;
+            }
+        }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            inTrigger = false;
+        }
+    }
+
+    void OnGUI()
+    {
+        if (inTrigger)
+        {
+            if (!dhKey)
+            {
+                GUI.Box(new Rect(200, 360, 200, 200), "You need a key to open door");
             }
         }
     }

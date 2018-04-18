@@ -43,6 +43,7 @@ public class Key : MonoBehaviour {
                 EnterTheDH.dhKey = true;
                 DeleteKeys.Add(gameObject.name);
                 Destroy(gameObject);
+                KeyManager.isImgOn = true;
             }
         }    
     }
