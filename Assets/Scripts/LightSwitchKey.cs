@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ButtonC : MonoBehaviour {
+public class LightSwitchKey : MonoBehaviour {
+
     public bool inTrigger;
-    public Light LightA;
-    public Light LightB;
-    public Light LightC;
+    //public static int keys = 0;
+
     public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -22,32 +22,36 @@ public class ButtonC : MonoBehaviour {
             inTrigger = false;
         }
     }
+
     void Start()
     {
-        LightB = GameObject.Find("Spot Light B").GetComponent<Light>();
-        LightC = GameObject.Find("Spot Light C").GetComponent<Light>();
+        if (Key.DeleteKeys.Contains(gameObject.name))
+        {
+            Destroy(gameObject);
+        }
+
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (inTrigger)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                ButtonA.B_Active = !ButtonA.B_Active;
-                ButtonA.C_Active = !ButtonA.C_Active;
-                LightB.enabled = ButtonA.B_Active;
-                LightC.enabled = ButtonA.C_Active;
-
+                KitchenEnter.KitchenKey = true;
+                Key.DeleteKeys.Add(gameObject.name);
+                Destroy(gameObject);
+                KeyManager.isImgOn = true;
             }
         }
     }
+
     void OnGUI()
     {
         if (inTrigger)
         {
-            GUI.Box(new Rect(200, 360, 200, 200), "Press E to push");
+            GUI.Box(new Rect(200, 360, 200, 200), "Press E to take key");
         }
     }
+
 }

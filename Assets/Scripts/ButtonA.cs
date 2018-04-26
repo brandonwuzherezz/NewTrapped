@@ -47,7 +47,7 @@ public class ButtonA : MonoBehaviour {
     {
         if (inTrigger)
         {
-            GUI.Box(new Rect(200, 360, 200, 200), "Press E to take key");
+            GUI.Box(new Rect(200, 360, 200, 200), "Press E to push");
         }
     }
 }
