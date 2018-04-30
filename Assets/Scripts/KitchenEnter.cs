@@ -3,14 +3,41 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class KitchenEnter : MonoBehaviour {
+public class KitchenEnter : MonoBehaviour
+{
+    public static bool KitchenKey;
+    public bool inTrigger;
 
-    void OnTriggerEnter(Collider col)
+    public void OnTriggerEnter(Collider other)
     {
-        if (col.gameObject.tag == "Player")
+        if (other.CompareTag("Player"))
         {
-            SceneManager.LoadScene("Kitchen");
-            LoadLevel.Kitchen = true;
+            inTrigger = true;
+            if (KitchenKey)
+            {
+                SceneManager.LoadScene("Kitchen");
+                LoadLevel.Kitchen = true;
+                KeyManager.isImgOn = false;
+            }
+        }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            inTrigger = false;
+        }
+    }
+
+    void OnGUI()
+    {
+        if (inTrigger)
+        {
+            if (!KitchenKey)
+            {
+                GUI.Box(new Rect(200, 360, 200, 200), "You need a key to open door");
+            }
         }
     }
 }
