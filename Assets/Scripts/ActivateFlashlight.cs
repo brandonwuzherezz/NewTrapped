@@ -6,12 +6,8 @@ public class ActivateFlashlight : MonoBehaviour {
 
     public static bool hasFlashlight = false;
     public static bool isFlashlightDestroyed = false;
-    Animator anim;
-    //bool Pickup;
-
-    void Start()
+    private void Start()
     {
-        anim = GetComponent<Animator>();
         if (isFlashlightDestroyed)
         {
             Destroy(gameObject);
@@ -24,8 +20,7 @@ public class ActivateFlashlight : MonoBehaviour {
             hasFlashlight = true;
             isFlashlightDestroyed = true;
             Destroy(gameObject);
-            anim.SetTrigger("FlashlightPickup");            
-        }
+		}
 
 	}
 }

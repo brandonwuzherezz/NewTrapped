@@ -30,7 +30,6 @@ public class Shadows : MonoBehaviour
     public Rigidbody myRigid;
     public MeshCollider myMeshC;
     public AudioSource myAudio;
-    public ParticleSystem myParticles;
     public static bool ShadowDestroyed = false;
     public static List<string> DeletedShadows = new List<string>();
     void Start()
@@ -46,7 +45,6 @@ public class Shadows : MonoBehaviour
         myRigid = this.GetComponent<Rigidbody>();
         myMeshC = this.GetComponent<MeshCollider>();
         myAudio = this.GetComponent<AudioSource>();
-        //myParticles = 
         
     }
     public void OnTriggerEnter(Collider other)
@@ -97,7 +95,6 @@ public class Shadows : MonoBehaviour
                 Flashlight.batteryLife -= 150f / 10f;
                 Flashlight.myLight.color = wcolor;
                 SpotlightManager.mySpotLight.color = wcolor;
-                myParticles.Stop();
             }
         }
     }
