@@ -5,19 +5,30 @@ using UnityEngine;
 public class EveryoneChange : MonoBehaviour {
     public MeshRenderer mycurrentRenderer;
     public MeshRenderer BasecurrentRenderer;
-    public Texture MynormalTexture;
-    public Texture normalTexture;
+    //Texture of nonshadow
+    public Material MynormalTexture;
+    //Texture of Parent nonshadow
+    public Material normalTexture;
     // Use this for initialization
+    public string NormalTexture_name;
+    public string MyNormalTexture_name;
     void Start () {
+        //render of child objects
         mycurrentRenderer = this.GetComponent<MeshRenderer>();
-        BasecurrentRenderer = GameObject.Find("BaseShadowLibrary").GetComponent<MeshRenderer>();
+        NormalTexture_name = normalTexture.name;
     }
 	
 	// Update is called once per frame
 	void Update () {
-		if(BasecurrentRenderer.material.mainTexture == normalTexture)
+		if(BasecurrentRenderer.material.name.Contains(NormalTexture_name))
         {
-            mycurrentRenderer.material.mainTexture = MynormalTexture;
+            mycurrentRenderer.material= MynormalTexture;
+            print("true");
+        }
+        else
+        {
+            print(BasecurrentRenderer.material);
+            print(normalTexture);
         }
 	}
 }

@@ -16,7 +16,7 @@ public class Shadows : MonoBehaviour
     public Color ccolor = Color.clear;
     public Color wcolor = Color.white;
 
-    public Texture normalTexture;
+    public Material normalTexture;
     public float Xpos;
     public float Ypos;
     public float Zpos;
@@ -31,6 +31,7 @@ public class Shadows : MonoBehaviour
     public MeshCollider myMeshC;
     public AudioSource myAudio;
     public ParticleSystem myParticles;
+
     public static bool ShadowDestroyed = false;
     public static List<string> DeletedShadows = new List<string>();
     void Start()
@@ -46,7 +47,7 @@ public class Shadows : MonoBehaviour
         myRigid = this.GetComponent<Rigidbody>();
         myMeshC = this.GetComponent<MeshCollider>();
         myAudio = this.GetComponent<AudioSource>();
-        //myParticles = 
+        //myParticles = this.GetComponent<ParticleSystem>();
         
     }
     public void OnTriggerEnter(Collider other)
@@ -58,7 +59,7 @@ public class Shadows : MonoBehaviour
                 //Adds Shadow name to DeletedShadows
                 DeletedShadows.Add(gameObject.name);
                 //Change Texture
-                currentRenderer.material.mainTexture = normalTexture;
+                currentRenderer.material = normalTexture;
                 //Turn off trigger of Box Collider
                 MyBox.isTrigger = false;
                 //Activate MeshCollider
@@ -85,7 +86,6 @@ public class Shadows : MonoBehaviour
                 {
                     myDictionary.Add(gameObject.name, Coordinates);
                 }
-                print(gameObject.name);
                 audioSource.Play();
                 //Change Tag
                 transform.tag = "Untagged";
@@ -94,10 +94,10 @@ public class Shadows : MonoBehaviour
                 myAudio.enabled = false;
                 // Turn off Shadow Script 
                 Destroy(myShadow);
+                Destroy(myParticles);
                 Flashlight.batteryLife -= 150f / 10f;
                 Flashlight.myLight.color = wcolor;
                 SpotlightManager.mySpotLight.color = wcolor;
-                myParticles.Stop();
             }
         }
     }
@@ -108,7 +108,7 @@ public class Shadows : MonoBehaviour
         {
             myMeshC.enabled = false;
             //Change Texture
-            currentRenderer.material.mainTexture = normalTexture;
+            currentRenderer.material = normalTexture;
             //Turn off trigger of Box Collider
             MyBox.isTrigger = false;
             //Activate MeshCollider
