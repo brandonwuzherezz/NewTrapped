@@ -129,6 +129,7 @@ public class Shadows : MonoBehaviour
             transform.tag = "Untagged";
             // Turn off Shadow Script 
             Destroy(myShadow);
+            Destroy(myParticles);
         }
         float distance = Vector3.Distance(transform.position, Player.transform.position);
         //print(distance);
