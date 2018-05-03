@@ -12,6 +12,7 @@ public class EveryoneChange : MonoBehaviour {
     // Use this for initialization
     public string NormalTexture_name;
     public string MyNormalTexture_name;
+
     void Start () {
         //render of child objects
         mycurrentRenderer = this.GetComponent<MeshRenderer>();
@@ -23,12 +24,6 @@ public class EveryoneChange : MonoBehaviour {
 		if(BasecurrentRenderer.material.name.Contains(NormalTexture_name))
         {
             mycurrentRenderer.material= MynormalTexture;
-            print("true");
-        }
-        else
-        {
-            print(BasecurrentRenderer.material);
-            print(normalTexture);
         }
 	}
 }
