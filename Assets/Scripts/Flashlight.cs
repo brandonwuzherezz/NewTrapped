@@ -67,6 +67,8 @@ public class Flashlight : MonoBehaviour
             Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.up); //rotate based on angle and axis(forward = z and up = y)      
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, speed * Time.deltaTime);
             //Debug.Log("lookPos: " + mousePos);
+
+
             if (batteryLife <= 0)
             {
                 myLight.enabled = false;
@@ -81,6 +83,7 @@ public class Flashlight : MonoBehaviour
             myLight.enabled = false;
             SpotlightManager.mySpotLight.enabled = false;
             SetBoxColliders(false);
+            AddLight();
         }
         
 
@@ -131,4 +134,16 @@ public class Flashlight : MonoBehaviour
         }
     }
 
+    public void AddLight()
+    {
+        if (batteryLife < maxBatteryLife)
+        {
+            batteryLife += .05f;  //need a value
+            flashlightbar.value = batteryLife / maxBatteryLife;
+            if(batteryLife > maxBatteryLife)
+            {
+                batteryLife = maxBatteryLife;
+            }
+        }
+    }
 }
