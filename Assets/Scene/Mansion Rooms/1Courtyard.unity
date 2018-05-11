@@ -4458,6 +4458,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1482846901}
   - component: {fileID: 1482846913}
+  - component: {fileID: 1482846914}
   - component: {fileID: 1482846912}
   - component: {fileID: 1482846911}
   - component: {fileID: 1482846910}
@@ -4737,7 +4738,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 0.78431374, a: 1}
-  m_Intensity: 0.5
+  m_Intensity: 1.5
   m_Range: 21.715515
   m_SpotAngle: 46
   m_CookieSize: 10
@@ -4764,6 +4765,31 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1482846914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1482846900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 10
+  ScatteringCoef: 1
+  ExtinctionCoef: 0
+  SkyboxExtinctionCoef: 0
+  MieG: 0
+  HeightFog: 1
+  HeightScale: 0.5
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 4.5
+  NoiseIntensity: 22.23
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 3, y: 3}
+  MaxRayLength: 400
 --- !u!1 &1485837666
 GameObject:
   m_ObjectHideFlags: 0
@@ -4808,6 +4834,7 @@ GameObject:
   - component: {fileID: 1527509771}
   - component: {fileID: 1527509770}
   - component: {fileID: 1527509773}
+  - component: {fileID: 1527509774}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4898,6 +4925,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 298454216}
+--- !u!114 &1527509774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1527509768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eed1d9cbe64423499f1fefc0ce50417, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Resolution: 0
+  DefaultSpotCookie: {fileID: 2800000, guid: 5157bf6d690b6df458f6c0ce0c06d329, type: 3}
 --- !u!1001 &1529074470
 Prefab:
   m_ObjectHideFlags: 0
