@@ -19,7 +19,6 @@ public class EnterTheDH : MonoBehaviour {
             inTrigger = true;
             if(DHlocked == false)
             {
-                print("here");
                 SceneManager.LoadScene("5Dining Room");
                 LoadLevel.DiningRoom = true;
  
