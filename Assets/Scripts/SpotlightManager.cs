@@ -27,21 +27,21 @@ public class SpotlightManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        mySpotLight.enabled = true;
+        /* if(noBatteries == true)
+         {
 
-        if(noBatteries == true)
-        {
+             float t = Mathf.PingPong(Time.time,duration);
+             mySpotLight.color = Color.Lerp(rcolor, wcolor, t);
+             mySpotLight.intensity -= 0.05f;
 
-            float t = Mathf.PingPong(Time.time,duration);
-            mySpotLight.color = Color.Lerp(rcolor, wcolor, t);
-            mySpotLight.intensity -= 0.05f;
-            
-        }
-        else
-        {
-            mySpotLight.intensity = maxIntensity;
-            mySpotLight.color = wcolor;
+         }
+         else
+         {
+             mySpotLight.intensity = maxIntensity;
+             mySpotLight.color = wcolor;
 
-        }
-		
-	}
+         }*/
+
+    }
 }
