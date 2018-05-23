@@ -8,8 +8,9 @@ public class Battery : MonoBehaviour
     public int collected = 1;
     public static List<string> DeletedBatteries = new List<string>();
     Animator anim;
+    public GameObject chosenEffect;
     //bool pickup;
-    
+
     void Start()
     {        
         audioSource = GameObject.FindGameObjectWithTag("B_SoundFX").GetComponent<AudioSource>();
@@ -32,6 +33,9 @@ public class Battery : MonoBehaviour
             DeletedBatteries.Add(gameObject.name);
             Destroy(gameObject);
             anim.SetTrigger("batteryPickup");
+            GameObject effectPlayer = (GameObject)Instantiate(chosenEffect, transform.position, transform.rotation);
+            //Destroy(effectPlayer);
+            Debug.Log(effectPlayer);
         }
          
     }
