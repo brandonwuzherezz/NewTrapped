@@ -30,7 +30,7 @@ public class Shadows : MonoBehaviour
     public Rigidbody myRigid;
     public MeshCollider myMeshC;
     public AudioSource myAudio;
-    public ParticleSystem myParticles;
+    public GameObject myParticles;
 
     public static bool ShadowDestroyed = false;
     public static List<string> DeletedShadows = new List<string>();
