@@ -38,22 +38,15 @@ public class Key : MonoBehaviour {
     {
         if (inTrigger)
         {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
+           
                 EnterBarricadeDH.dhKey = true;
                 DeleteKeys.Add(gameObject.name);
                 Destroy(gameObject);
                 KeyManager.isImgOn = true;
-            }
+          
         }    
     }
 
-    void OnGUI()
-    {
-        if (inTrigger)
-        {
-            GUI.Box(new Rect(200, 360, 200, 200), "Press E to take key");
-        }    
-    }
+    
 
 }
