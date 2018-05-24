@@ -40,7 +40,7 @@ public class Key : MonoBehaviour {
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                EnterTheDH.dhKey = true;
+                EnterBarricadeDH.dhKey = true;
                 DeleteKeys.Add(gameObject.name);
                 Destroy(gameObject);
                 KeyManager.isImgOn = true;
