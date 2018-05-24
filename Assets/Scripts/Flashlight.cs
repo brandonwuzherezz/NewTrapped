@@ -60,7 +60,7 @@ public class Flashlight : MonoBehaviour
 
 
             flashlightbar.value = batteryLife / maxBatteryLife;
-            //print (flashlightbar.value);
+            /*//print (flashlightbar.value);
             Vector3 mousePos = new Vector3(Input.mousePosition.x, 0, Input.mousePosition.y); //mouse position
             //Vector3 lookPos = Camera.main.ScreenToWorldPoint(mousePos); // convert to position in the world
             //lookPos = lookPos - transform.position; // offset by the position of flashlight 
@@ -69,12 +69,12 @@ public class Flashlight : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, speed * Time.deltaTime);
             //Debug.Log("lookPos: " + mousePos);*/
 
-            /*Vector3 m = Input.mousePosition;
+            Vector3 m = Input.mousePosition;
             Vector3 n = Camera.main.ScreenToWorldPoint(new Vector3(m.x, m.y, 1));
             float camDistance = (float)Math.Sqrt((Math.Pow(n.y, 2.0f) + Math.Pow(6, 2.0f)));
             Vector3 p = Camera.main.ScreenToWorldPoint(new Vector3(m.x, m.y, camDistance));
 
-            transform.LookAt(p);*/
+            transform.LookAt(p);
 
             if (batteryLife <= 0)
             {
