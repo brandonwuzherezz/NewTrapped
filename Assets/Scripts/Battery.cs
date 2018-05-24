@@ -35,7 +35,7 @@ public class Battery : MonoBehaviour
             anim.SetTrigger("batteryPickup");
             GameObject effectPlayer = (GameObject)Instantiate(chosenEffect, transform.position, transform.rotation);
             //Destroy(effectPlayer);
-            Debug.Log(effectPlayer);
+            //Debug.Log(effectPlayer);
         }
          
     }
