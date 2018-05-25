@@ -36,13 +36,12 @@ public class MBKey : MonoBehaviour {
     {
         if (inTrigger)
         {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                BSHtoMasterBed.MBKey = true;
+            
+                MBBarricade.MBKey = true;
                 Key.DeleteKeys.Add(gameObject.name);
                 Destroy(gameObject);
                 KeyManager.isImgOn = true;
-            }
+           
         }
     }
 
