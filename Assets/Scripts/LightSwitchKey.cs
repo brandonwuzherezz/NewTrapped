@@ -6,7 +6,7 @@ public class LightSwitchKey : MonoBehaviour {
 
     public bool inTrigger;
     //public static int keys = 0;
-
+    public AudioSource LightNoise;
     public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -36,9 +36,11 @@ public class LightSwitchKey : MonoBehaviour {
     {
         if (inTrigger)
         {
-                KitchenBarricade.KitchenKey = true;
-                Key.DeleteKeys.Add(gameObject.name);
-                Destroy(gameObject);
+
+            KitchenBarricade.KitchenKey = true;
+            Key.DeleteKeys.Add(gameObject.name);
+            LightNoise.Play();
+            Destroy(gameObject);
             KeyManager.isImgOn = true;
         }
     }
