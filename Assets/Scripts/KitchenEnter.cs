@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 public class KitchenEnter : MonoBehaviour
 {
 
-    void OnTriggerEnter(Collider col)
+    IEnumerator OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Player")
         {
+            float fadeTime = GameObject.Find("Fade").GetComponent<CatchThisFade>().BeginFade(1);
+            yield return new WaitForSeconds(fadeTime);
             SceneManager.LoadScene("Kitchen");
             LoadLevel.Kitchen = true;
         }

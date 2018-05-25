@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 public class EnterTheDH : MonoBehaviour
 {
 
-    void OnTriggerEnter(Collider col)
+    IEnumerator OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Player")
         {
+            float fadeTime = GameObject.Find("Fade").GetComponent<CatchThisFade>().BeginFade(1);
+            yield return new WaitForSeconds(fadeTime);
             SceneManager.LoadScene("5Dining Room");
             LoadLevel.DiningRoom = true;
         }
