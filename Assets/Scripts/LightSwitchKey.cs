@@ -36,13 +36,10 @@ public class LightSwitchKey : MonoBehaviour {
     {
         if (inTrigger)
         {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                KitchenEnter.KitchenKey = true;
+                KitchenBarricade.KitchenKey = true;
                 Key.DeleteKeys.Add(gameObject.name);
                 Destroy(gameObject);
-                KeyManager.isImgOn = true;
-            }
+            KeyManager.isImgOn = true;
         }
     }
 
