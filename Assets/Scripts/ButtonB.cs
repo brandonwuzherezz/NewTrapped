@@ -7,6 +7,7 @@ public class ButtonB : MonoBehaviour {
     public Light LightA;
     public Light LightB;
     public Light LightC;
+    public AudioSource Bnoise;
     public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -36,6 +37,7 @@ public class ButtonB : MonoBehaviour {
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+                Bnoise.Play();
                 ButtonA.A_Active = !ButtonA.A_Active;
                 ButtonA.B_Active = !ButtonA.B_Active;
                 ButtonA.C_Active = !ButtonA.C_Active;

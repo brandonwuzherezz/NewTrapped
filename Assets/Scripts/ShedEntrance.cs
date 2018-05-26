@@ -5,11 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class ShedEntrance : MonoBehaviour {
 
-	void OnTriggerEnter(Collider col)
+    IEnumerator OnTriggerEnter(Collider col)
 	{
 		if (col.gameObject.tag == "Player")
 		{
-			SceneManager.LoadScene("2Shed");
+            float fadeTime = GameObject.Find("Fade").GetComponent<CatchThisFade>().BeginFade(1);
+            yield return new WaitForSeconds(fadeTime);
+            SceneManager.LoadScene("2Shed");
 			LoadLevel.ShedDoor = true;
 		}
 	}
