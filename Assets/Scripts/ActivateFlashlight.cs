@@ -6,6 +6,7 @@ public class ActivateFlashlight : MonoBehaviour {
 
     public static bool hasFlashlight = false;
     public static bool isFlashlightDestroyed = false;
+    public AudioSource Flashnoise;
     Animator anim;
     //bool Pickup;
 
@@ -23,6 +24,7 @@ public class ActivateFlashlight : MonoBehaviour {
 		{
             hasFlashlight = true;
             isFlashlightDestroyed = true;
+            Flashnoise.Play();
             Destroy(gameObject);
             anim.SetTrigger("FlashlightPickup");            
         }

@@ -6,7 +6,7 @@ public class MBKey : MonoBehaviour {
 
     public bool inTrigger;
     //public static int keys = 0;
-
+    public AudioSource MBnoise;
     public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -36,13 +36,13 @@ public class MBKey : MonoBehaviour {
     {
         if (inTrigger)
         {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                BSHtoMasterBed.MBKey = true;
+            
+                MBBarricade.MBKey = true;
                 Key.DeleteKeys.Add(gameObject.name);
+                MBnoise.Play();
                 Destroy(gameObject);
                 KeyManager.isImgOn = true;
-            }
+           
         }
     }
 

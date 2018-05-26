@@ -30,7 +30,8 @@ public class Shadows : MonoBehaviour
     public Rigidbody myRigid;
     public MeshCollider myMeshC;
     public AudioSource myAudio;
-    public ParticleSystem myParticles;
+    public GameObject myParticles;
+    public GameObject chosenEffect;
 
     public static bool ShadowDestroyed = false;
     public static List<string> DeletedShadows = new List<string>();
@@ -95,6 +96,7 @@ public class Shadows : MonoBehaviour
                 // Turn off Shadow Script 
                 Destroy(myShadow);
                 Destroy(myParticles);
+                GameObject effectPlayer = (GameObject)Instantiate(chosenEffect, transform.position, transform.rotation);
                 Flashlight.batteryLife -= 150f / 10f;
                 Flashlight.myLight.color = wcolor;
                 SpotlightManager.mySpotLight.color = wcolor;

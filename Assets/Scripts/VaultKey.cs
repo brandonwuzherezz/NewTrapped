@@ -6,7 +6,7 @@ public class VaultKey : MonoBehaviour {
 
     public bool inTrigger;
     //public static int keys = 0;
-
+    public AudioSource Vaultnoise;
     public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -36,13 +36,13 @@ public class VaultKey : MonoBehaviour {
     {
         if (inTrigger)
         {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                MasterBedroomToVault.vaultKey = true;
+
+                MasterBedroomBarricade.vaultKey = true;
                 Key.DeleteKeys.Add(gameObject.name);
+                Vaultnoise.Play();
                 Destroy(gameObject);
                 KeyManager.isImgOn = true;
-            }
+           
         }
     }
 

@@ -360,7 +360,7 @@ public class LoadLevel : MonoBehaviour
     }
     void SpawnOutsideBallroom()
     {//spawn in Kitchen from Ballroom
-        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(13.29302f, -0.09485483f, 3.660009f);
+        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(14.41302f, -0.09485483f, -1.519992f);
         Ballroom = false;
     }
     void SpawnOutsideBallHall()

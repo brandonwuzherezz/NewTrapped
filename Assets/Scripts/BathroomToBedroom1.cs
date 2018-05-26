@@ -5,12 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class BathroomToBedroom1 : MonoBehaviour {
 
-    void OnTriggerEnter(Collider col)
+    IEnumerator OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Player")
         {
+            float fadeTime = GameObject.Find("Fade").GetComponent<CatchThisFade>().BeginFade(1);
+            yield return new WaitForSeconds(fadeTime);
             SceneManager.LoadScene("Bedroom1");
-            print("here");
             print(LoadLevel.Bedroom1A);
         }
     }
