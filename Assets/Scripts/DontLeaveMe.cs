@@ -14,15 +14,20 @@ public class DontLeaveMe : MonoBehaviour {
         {
             Destroy(gameObject);
         }
-       /* if (GameObject.Find("Safety").GetComponent<RawImage>().enabled == true)
+
+        if (Input.GetKeyDown(KeyCode.Return))
         {
-           myTimer++;
+            EndDialogue();
         }
-        if(myTimer > 80)
-        {
-            myTimer = 0;
-            GameObject.Find("Safety").GetComponent<RawImage>().enabled = false;
-        }*/
+        /* if (GameObject.Find("Safety").GetComponent<RawImage>().enabled == true)
+         {
+            myTimer++;
+         }
+         if(myTimer > 80)
+         {
+             myTimer = 0;
+             GameObject.Find("Safety").GetComponent<RawImage>().enabled = false;
+         }*/
     }
     // Use this for initialization
     public void OnTriggerEnter(Collider other)
@@ -30,7 +35,8 @@ public class DontLeaveMe : MonoBehaviour {
         if (other.CompareTag("Player"))
         {
             //GameObject.Find("Safety").GetComponent<RawImage>().enabled = true;
-            animator.SetBool("IsOpen", true);
+            //animator.SetBool("IsOpen", true);
+            StartDialogue();
         }
 
     }
@@ -42,6 +48,6 @@ public class DontLeaveMe : MonoBehaviour {
 
     void EndDialogue()
     {
-        //animator.SetBool("IsOpen", false);
+        animator.SetBool("IsOpen", false);
     }
 }
