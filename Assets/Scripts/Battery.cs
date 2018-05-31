@@ -8,6 +8,7 @@ public class Battery : MonoBehaviour
     public int collected = 1;
     public static List<string> DeletedBatteries = new List<string>();
     Animator anim;
+    
     public GameObject chosenEffect;
     //bool pickup;
 
@@ -15,8 +16,9 @@ public class Battery : MonoBehaviour
     {        
         audioSource = GameObject.FindGameObjectWithTag("B_SoundFX").GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
+
     }
-    void Update()
+    public void Update()
     {
         if (DeletedBatteries.Contains(gameObject.name) && GameOver.ResetGame == false)
         {
