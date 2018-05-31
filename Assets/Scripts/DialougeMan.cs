@@ -12,6 +12,8 @@ public class DialougeMan : MonoBehaviour {
     public AudioSource WalkieTalkie;
     public AudioSource EndWalkie;
     public bool Dead = false;
+    public Animator animator;
+
     void Start () {
         Images = new Queue<Texture>();
         Images.Clear();
@@ -21,7 +23,8 @@ public class DialougeMan : MonoBehaviour {
         }
         //StartWalkie.Play();
         WalkieTalkie.Play();
-	}
+        StartDialogue();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -39,7 +42,18 @@ public class DialougeMan : MonoBehaviour {
             
             Texture IMG = Images.Dequeue();
             MyRaw.texture = IMG;
+            EndDialogue();
         }
         
+    }
+    public void StartDialogue()
+    {
+        animator.SetBool("IsOpen", true);
+        return;
+    }
+
+    void EndDialogue()
+    {
+        animator.SetBool("IsOpen", false);
     }
 }

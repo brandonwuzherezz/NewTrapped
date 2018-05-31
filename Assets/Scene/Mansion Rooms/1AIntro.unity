@@ -185,6 +185,7 @@ GameObject:
   - component: {fileID: 761124784}
   - component: {fileID: 761124783}
   - component: {fileID: 761124782}
+  - component: {fileID: 761124785}
   m_Layer: 5
   m_Name: RawImage
   m_TagString: Untagged
@@ -240,9 +241,27 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 12.299996, y: 72.72}
+  m_AnchoredPosition: {x: 12.299996, y: -65}
   m_SizeDelta: {x: 485.2, y: 169.5}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &761124785
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 761124781}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d415e7ee9a75ccc40a354a7daf47c822, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &764857758
 Prefab:
   m_ObjectHideFlags: 0
@@ -721,6 +740,7 @@ MonoBehaviour:
   WalkieTalkie: {fileID: 1963538023}
   EndWalkie: {fileID: 1963538022}
   Dead: 0
+  animator: {fileID: 0}
 --- !u!4 &1963538021
 Transform:
   m_ObjectHideFlags: 0
