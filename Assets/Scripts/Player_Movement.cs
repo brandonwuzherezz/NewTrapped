@@ -8,11 +8,11 @@ public class Player_Movement : MonoBehaviour
 
     public float maxSpeed = 4.0f;
     bool facingRight = false;
-    int State = 0;
-    AudioSource audioSource;
+    public int State = 0;
+    public AudioSource audioSource;
 
     Flashlight flashLight;
-    Animator anim;
+    public Animator anim;
     Rigidbody RB;
     void Start()
     {
