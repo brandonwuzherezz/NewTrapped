@@ -49,6 +49,7 @@ public class DialogueTrigger : MonoBehaviour {
     void EndDialogue()
     {
         animator.SetBool("IsOpen", false);
+        GameObject.Find("Girl").GetComponent<Player_Movement>().anim.SetInteger("State", 0);
         GameObject.Find("Girl").GetComponent<Player_Movement>().enabled = true;
     }
 }
