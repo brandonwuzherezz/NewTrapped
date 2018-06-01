@@ -25,7 +25,7 @@ public class ReloadLevel : MonoBehaviour {
 
         }
 
-        if (GameOver.ResetGame == true)
+        if (Game_Over_Buttons.ResetGame == true)
         {
      
             foreach (string battery in BatteryNames)
@@ -43,7 +43,7 @@ public class ReloadLevel : MonoBehaviour {
 				}
             }
             Flashlight.batteryLife = 150;
-            GameOver.ResetGame = false;
+            Game_Over_Buttons.ResetGame = false;
         }
 	}
 
