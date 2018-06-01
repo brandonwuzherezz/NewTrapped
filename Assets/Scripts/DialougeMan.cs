@@ -22,8 +22,9 @@ public class DialougeMan : MonoBehaviour {
             Images.Enqueue(img);
         }
         //StartWalkie.Play();
+        animator.SetBool("IsOpen", false);
         WalkieTalkie.Play();
-        StartDialogue();
+        
     }
 	
 	// Update is called once per frame
@@ -39,10 +40,8 @@ public class DialougeMan : MonoBehaviour {
         }
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            
-            Texture IMG = Images.Dequeue();
-            MyRaw.texture = IMG;
-            EndDialogue();
+            animator.SetBool("IsOpen", true);
+            StartCoroutine("Wait");
         }
         
     }
@@ -54,6 +53,13 @@ public class DialougeMan : MonoBehaviour {
 
     void EndDialogue()
     {
+        animator.SetBool("IsOpen", false);
+    }
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Texture IMG = Images.Dequeue();
+        MyRaw.texture = IMG;
         animator.SetBool("IsOpen", false);
     }
 }
