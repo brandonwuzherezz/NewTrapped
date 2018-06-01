@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class WinScreenOptions : MonoBehaviour {
 
-	public bool isContinue;
+	public static bool isContinue;
     //public bool isRestart;
     //public bool isQuit;
     AudioSource audioSource;
