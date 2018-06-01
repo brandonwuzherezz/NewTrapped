@@ -43,9 +43,16 @@ public class ReloadLevel : MonoBehaviour {
                     {
                         EnterBarricadeDH.dhKey = false;
                     }
+                    if (kys == "VaultKey")
+                    {
+                        MasterBedroomBarricade.vaultKey = false;
+                    }
+                    if (kys == "MBKey")
+                    {
+                        MBBarricade.MBKey = false;
+                    }
                     Key.DeleteKeys.Remove(kys);
                     KeyManager.isImgOn = false;
-                    print("here");
                 }
             }
             foreach (string battery in BatteryNames)

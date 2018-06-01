@@ -26,8 +26,7 @@ public class Key : MonoBehaviour {
 
     void Start()
     {
-        print(EnterBarricadeDH.dhKey);
-        if (EnterBarricadeDH.dhKey == true)
+        if (Key.DeleteKeys.Contains(gameObject.name))
         {
             Destroy(gameObject);
         }
