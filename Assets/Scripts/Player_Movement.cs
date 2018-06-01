@@ -124,7 +124,7 @@ public class Player_Movement : MonoBehaviour
         if (col.gameObject.tag == "Shadow")
         {
             Scene currentScene = SceneManager.GetActiveScene();
-            GameOver.PreviousScene = currentScene.name;
+            Game_Over_Buttons.PreviousScene = currentScene.name;
             SceneManager.LoadScene("Scene_GameOver");
             //Destroy(GameObject.FindWithTag("Player"));
             //flashLight.isActive = true;
