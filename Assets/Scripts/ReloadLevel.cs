@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class ReloadLevel : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    
+    void Awake () {
         GameObject[] LocalBatteries;
         GameObject[] LocalShadows;
-        List<string> ShadowsNames = new List<string>(); ;
-        List<string> BatteryNames = new List<string>(); ;
+        GameObject[] LocalKeys;
+        List<string> ShadowsNames = new List<string>(); 
+        List<string> BatteryNames = new List<string>();
+        List<string> keyNames = new List<string>(); ;
         LocalBatteries = GameObject.FindGameObjectsWithTag("Battery");
         LocalShadows = GameObject.FindGameObjectsWithTag("Shadow");
+        LocalKeys = GameObject.FindGameObjectsWithTag("Key");
         
-		foreach(GameObject bat in LocalBatteries)
+        foreach (GameObject bat in LocalBatteries)
         {
             BatteryNames.Add(bat.name);
             
@@ -24,13 +28,36 @@ public class ReloadLevel : MonoBehaviour {
             ShadowsNames.Add(Shad.name);
 
         }
-
-        if (GameOver.ResetGame == true)
+        foreach (GameObject K in LocalKeys)
         {
-     
+            keyNames.Add(K.name);
+
+        }
+        if (Game_Over_Buttons.ResetGame == true)
+        {
+            foreach (string kys in keyNames)
+            {
+                if (Key.DeleteKeys.Contains(kys))
+                {
+                    if(kys == "DHkey")
+                    {
+                        EnterBarricadeDH.dhKey = false;
+                    }
+                    if (kys == "VaultKey")
+                    {
+                        MasterBedroomBarricade.vaultKey = false;
+                    }
+                    if (kys == "MBKey")
+                    {
+                        MBBarricade.MBKey = false;
+                    }
+                    Key.DeleteKeys.Remove(kys);
+                    KeyManager.isImgOn = false;
+                }
+            }
             foreach (string battery in BatteryNames)
             {
-				if(Battery.DeletedBatteries.Contains(battery)){
+                if (Battery.DeletedBatteries.Contains(battery)){
 					Battery.DeletedBatteries.Remove(battery);
                	    BatteryManager.battery -= 1;
                 }
@@ -42,8 +69,9 @@ public class ReloadLevel : MonoBehaviour {
 				    Shadows.DeletedShadows.Remove(Shadow);
 				}
             }
+
             Flashlight.batteryLife = 150;
-            GameOver.ResetGame = false;
+            Game_Over_Buttons.ResetGame = false;
         }
 	}
 

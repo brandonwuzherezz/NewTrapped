@@ -30,6 +30,7 @@ public class Shadows : MonoBehaviour
     public Rigidbody myRigid;
     public MeshCollider myMeshC;
     public AudioSource myAudio;
+    public AudioSource myAudio2;
     public GameObject myParticles;
     public GameObject chosenEffect;
 
@@ -92,6 +93,7 @@ public class Shadows : MonoBehaviour
                 transform.tag = "Untagged";
                 //turn off audio tag
                 myAudio.mute = true;
+                myAudio2.mute = true;
                 myAudio.enabled = false;
                 // Turn off Shadow Script 
                 Destroy(myShadow);
@@ -126,6 +128,7 @@ public class Shadows : MonoBehaviour
             transform.position = new Vector3(Xpos, Ypos, Zpos);
             //Turn off shadow audio
             myAudio.mute = true;
+            myAudio2.mute = true;
             myAudio.enabled = false;
             //Change Tag
             transform.tag = "Untagged";

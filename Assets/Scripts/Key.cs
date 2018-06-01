@@ -26,7 +26,7 @@ public class Key : MonoBehaviour {
 
     void Start()
     {
-        if (DeleteKeys.Contains(gameObject.name))
+        if (Key.DeleteKeys.Contains(gameObject.name))
         {
             Destroy(gameObject);
         }
