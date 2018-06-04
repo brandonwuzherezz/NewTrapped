@@ -392,7 +392,7 @@ public class LoadLevel : MonoBehaviour
     /*Manuels Code */
     void SpawnOutsideBedroom1A()
     {//Spawn in Bathroom from Bedroom1
-        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-14.74999f, -0.1651622f, -19.18f);
+        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-14.14999f, -0.1651627f, -2.777015f);
         Bedroom1A = false;
     }
 
