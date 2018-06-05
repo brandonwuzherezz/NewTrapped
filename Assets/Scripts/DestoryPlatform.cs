@@ -14,7 +14,7 @@ public class DestoryPlatform : MonoBehaviour {
     void Start()
     {
         Item = GameObject.Find("PantryKey");
-        if (Solved)
+        if (Solved == true)
         {
             LightA.enabled = true;
             LightB.enabled = true;
