@@ -7,7 +7,8 @@ public class DoThisForMe : MonoBehaviour {
     public string DisccusionName;
     public bool Isdead;
     public static List<string> DeadDialouge = new List<string>();
-    private void Start()
+
+    void Start()
     {
         if (DeadDialouge.Contains(DisccusionName))
         {
