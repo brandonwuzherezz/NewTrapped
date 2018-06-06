@@ -74,4 +74,9 @@ public class Win_Screen_Button: MonoBehaviour
     }
 
 
+    public void Quit_Game()
+    {
+        Application.Quit();
+    }
+
 }
