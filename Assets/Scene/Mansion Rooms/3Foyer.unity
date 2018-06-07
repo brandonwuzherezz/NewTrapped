@@ -1798,6 +1798,11 @@ Prefab:
       propertyPath: m_AnchoredPosition.x
       value: 52.69995
       objectReference: {fileID: 0}
+    - target: {fileID: 224078628672059146, guid: cc1ff48d751a4c24abe53c72f06a94dd,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 30.800049
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc1ff48d751a4c24abe53c72f06a94dd, type: 2}
   m_IsPrefabAsset: 0
@@ -8001,13 +8006,14 @@ GameObject:
   - component: {fileID: 1456472990}
   - component: {fileID: 1456472992}
   - component: {fileID: 1456472991}
+  - component: {fileID: 1456472993}
   m_Layer: 5
   m_Name: Disscussion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1456472990
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8024,7 +8030,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -4.200012, y: 53.009995}
+  m_AnchoredPosition: {x: -4.2000084, y: -100.30001}
   m_SizeDelta: {x: 290.5, y: 93.601}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1456472991
@@ -8060,6 +8066,24 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1456472989}
   m_CullTransparentMesh: 0
+--- !u!95 &1456472993
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1456472989}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: acff7f136e62a464fbb5c78c38a3c796, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1461447251
 Prefab:
   m_ObjectHideFlags: 0
@@ -8738,6 +8762,8 @@ GameObject:
   - component: {fileID: 1635172405}
   - component: {fileID: 1635172404}
   - component: {fileID: 1635172406}
+  - component: {fileID: 1635172407}
+  - component: {fileID: 1635172408}
   m_Layer: 5
   m_Name: Image1
   m_TagString: Untagged
@@ -8760,7 +8786,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -4.200007, y: 53.009995}
+  m_AnchoredPosition: {x: -4.200007, y: -50.5}
   m_SizeDelta: {x: 290.5, y: 93.601}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1635172404
@@ -8809,6 +8835,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisccusionName: Image1
   Deactivate: 0
+  animator: {fileID: 1635172407}
+  AninmatorName: IsOpen2
+--- !u!95 &1635172407
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1635172402}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a37547da9ba25ec42a9b2262d226c478, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1635172408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1635172402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a756c3cd0a841444b25fc8641f2c4a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1640481089
 GameObject:
   m_ObjectHideFlags: 0
@@ -9947,6 +10004,21 @@ Prefab:
       propertyPath: MyImages.Array.data[4]
       value: 
       objectReference: {fileID: 2800000, guid: e979f008abbad3b46a2ad6ae2ff7bf29, type: 3}
+    - target: {fileID: 114795071604719368, guid: eef3f85b6bb21144696a280b430c38f7,
+        type: 2}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1456472993}
+    - target: {fileID: 114795071604719368, guid: eef3f85b6bb21144696a280b430c38f7,
+        type: 2}
+      propertyPath: animationTimer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114795071604719368, guid: eef3f85b6bb21144696a280b430c38f7,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eef3f85b6bb21144696a280b430c38f7, type: 2}
   m_IsPrefabAsset: 0
