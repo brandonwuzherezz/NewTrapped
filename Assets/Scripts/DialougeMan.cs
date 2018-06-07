@@ -22,9 +22,9 @@ public class DialougeMan : MonoBehaviour {
             Images.Enqueue(img);
         }
         //StartWalkie.Play();
-        animator.SetBool("IsOpen", true);
-        WalkieTalkie.Play();
-        
+       
+            animator.SetBool("IsOpen", true);
+            WalkieTalkie.Play();
     }
 	
 	// Update is called once per frame

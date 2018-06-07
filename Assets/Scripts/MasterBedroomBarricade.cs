@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class MasterBedroomBarricade : MonoBehaviour {
@@ -11,6 +12,8 @@ public class MasterBedroomBarricade : MonoBehaviour {
     public Material UnlockedDoor;
     public AudioSource Locked;
     public AudioSource UnLock;
+    public RawImage MyRaw;
+    public RawImage MyRawr;
     public static bool BarrDestroyed = false;
     public void OnTriggerEnter(Collider other)
     {
@@ -46,6 +49,10 @@ public class MasterBedroomBarricade : MonoBehaviour {
             {
                 if (vaultKey)
                 {
+                    if (vaultlocked)
+                    {
+                        MyRaw.enabled = true;
+                    }
                     if (Input.GetKeyDown(KeyCode.E))
                     {
                         vaultlocked = false;
@@ -57,8 +64,19 @@ public class MasterBedroomBarricade : MonoBehaviour {
                         UnLock.Play();
                     }
                 }
+                else
+                {
 
+                    MyRawr.enabled = true;
+
+                }
             }
+            else
+            {
+                MyRaw.enabled = false;
+                MyRawr.enabled = false;
+            }
+           
         }
         if(BarrDestroyed == true)
         {

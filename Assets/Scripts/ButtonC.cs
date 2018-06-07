@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class ButtonC : MonoBehaviour {
@@ -8,6 +9,8 @@ public class ButtonC : MonoBehaviour {
     public Light LightB;
     public Light LightC;
     public AudioSource Cnoise;
+    public RawImage MyRaw;
+
     public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -34,6 +37,7 @@ public class ButtonC : MonoBehaviour {
     {
         if (inTrigger)
         {
+            MyRaw.enabled = true;
             if (Input.GetKeyDown(KeyCode.E))
             {
                 Cnoise.Play();
@@ -44,12 +48,10 @@ public class ButtonC : MonoBehaviour {
 
             }
         }
-    }
-    void OnGUI()
-    {
-        if (inTrigger)
+        else
         {
-            GUI.Box(new Rect(200, 360, 200, 200), "Press E to push");
+            MyRaw.enabled = false;
         }
     }
+  
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class MBBarricade : MonoBehaviour {
@@ -10,6 +11,9 @@ public class MBBarricade : MonoBehaviour {
     public AudioSource Locked;
     public AudioSource UnLock;
     public static bool MBdestroyed = false;
+    public RawImage MyRaw;
+    public RawImage MyRawr;
+
     public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -21,6 +25,7 @@ public class MBBarricade : MonoBehaviour {
             }
         }
     }
+
 
     public void OnTriggerExit(Collider other)
     {
@@ -38,6 +43,10 @@ public class MBBarricade : MonoBehaviour {
             {
                 if (MBKey)
                 {
+                    if (MBlocked)
+                    {
+                        MyRaw.enabled = true;
+                    }
                     if (Input.GetKeyDown(KeyCode.E))
                     {
                         MBlocked = false;
@@ -45,29 +54,31 @@ public class MBBarricade : MonoBehaviour {
                         //image changing code
                         //play soundeffect
                         MBdestroyed = true;
+                        MyRaw.enabled = false;
+                        MyRawr.enabled = false;
                         UnLock.Play();
                     }
                 }
+                else
+                {
+                  
+                        MyRawr.enabled = true;
+                   
+                }
 
+            }
+            else
+            {
+                MyRaw.enabled = false;
+                MyRawr.enabled = false;
             }
         }
         if(MBdestroyed == true)
         {
+            MyRaw.enabled = false;
+            MyRawr.enabled = false;
             Destroy(gameObject);
         }
     }
-    void OnGUI()
-    {
-        if (inTrigger)
-        {
-            if (!MBKey)
-            {
-                GUI.Box(new Rect(200, 360, 200, 200), "You need a key to open door");
-            }
-            if (MBKey && MBlocked)
-            {
-                GUI.Box(new Rect(200, 360, 200, 200), "Press E to Unlock");
-            }
-        }
-    }
+   
 }

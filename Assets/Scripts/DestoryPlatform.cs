@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class DestoryPlatform : MonoBehaviour {
@@ -10,6 +11,9 @@ public class DestoryPlatform : MonoBehaviour {
     public Light LightB;
     public Light LightC;
     public GameObject Item;
+    public RawImage A;
+    public RawImage B;
+    public RawImage C;
     public static bool Solved = false;
     void Start()
     {
@@ -29,6 +33,9 @@ public class DestoryPlatform : MonoBehaviour {
     void Update () {
 		if(ButtonA.A_Active == true && ButtonA.B_Active == true && ButtonA.C_Active == true)
         {
+            A.enabled = false;
+            B.enabled = false;
+            C.enabled = false;
             ScriptA.enabled = false;
             ScriptB.enabled = false;
             ScriptC.enabled = false;
