@@ -57,6 +57,7 @@ public class DialougeMan : MonoBehaviour {
     void EndDialogue()
     {
         animator.SetBool("IsOpen", false);
+        this.enabled = false;
     }
     IEnumerator Wait()
     {

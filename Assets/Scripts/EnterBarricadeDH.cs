@@ -15,6 +15,9 @@ public class EnterBarricadeDH : MonoBehaviour {
     public static bool DHDestroyed = false;
     public RawImage MyRaw;
     public RawImage MyRawr;
+    public bool DialougeActive = false;
+    public Texture[] MyImages;
+
     public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -70,7 +73,10 @@ public class EnterBarricadeDH : MonoBehaviour {
                 }
                 else
                 {
-                    MyRawr.enabled = true;
+                    if (DialougeActive == false)
+                    {
+                        MyRawr.enabled = true;
+                    }
                 }
             }
             else
