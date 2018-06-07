@@ -14,7 +14,7 @@ public class DoThisForMe : MonoBehaviour {
         {
             GameObject.Find("DialougeMan").GetComponent<DialougeMan>().enabled = false ;
             Destroy(GameObject.Find(DisccusionName));
-            Destroy(this);
+            this.enabled = false;
         }
     }
     void Update()
@@ -26,7 +26,7 @@ public class DoThisForMe : MonoBehaviour {
             GameObject.Find("Girl").GetComponent<Player_Movement>().anim.SetInteger("State", 0);
             GameObject.Find("Girl").GetComponent<Player_Movement>().enabled = true;
             Destroy(GameObject.Find(DisccusionName));
-            Destroy(this);
+            this.enabled = false;
         }
         else
         {
