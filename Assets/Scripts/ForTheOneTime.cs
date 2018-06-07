@@ -6,6 +6,7 @@ public class ForTheOneTime : MonoBehaviour
 {
     public string DisccusionName;
     public bool Deactivate = false;
+    public Animator animator;
     void Start()
     {
         if (DoThisForMe.DeadDialouge.Contains(DisccusionName))
@@ -18,14 +19,31 @@ public class ForTheOneTime : MonoBehaviour
     {
         GameObject.Find("Girl").GetComponent<Player_Movement>().anim.SetInteger("State", 0);
         GameObject.Find("Girl").GetComponent<Player_Movement>().audioSource.Stop();
-        GameObject.Find("Girl").GetComponent<Player_Movement>().enabled = false;
+        //GameObject.Find("Girl").GetComponent<Player_Movement>().enabled = false;
+        StartDialogue();
+
         if (Input.GetKeyDown(KeyCode.Return))
         {
             //Press Enter And Then Close Image Using Anim
             GameObject.Find("Girl").GetComponent<Player_Movement>().anim.SetInteger("State", 0);
             GameObject.Find("Girl").GetComponent<Player_Movement>().enabled = true;
             DoThisForMe.DeadDialouge.Add(DisccusionName);
-            Destroy(gameObject);
+            EndDialogue();
+            StartCoroutine("Wait");
         }
+    }
+    void StartDialogue()
+    {
+        animator.SetBool("IsOpen", true);
+    }
+
+    void EndDialogue()
+    {
+        animator.SetBool("IsOpen", false);
+    }
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Destroy(gameObject);
     }
 }
