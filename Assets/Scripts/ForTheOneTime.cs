@@ -13,6 +13,7 @@ public class ForTheOneTime : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        StartDialogue();
     }
     // Update is called once per frame
     void Update()
@@ -20,7 +21,7 @@ public class ForTheOneTime : MonoBehaviour
         GameObject.Find("Girl").GetComponent<Player_Movement>().anim.SetInteger("State", 0);
         GameObject.Find("Girl").GetComponent<Player_Movement>().audioSource.Stop();
         //GameObject.Find("Girl").GetComponent<Player_Movement>().enabled = false;
-        StartDialogue();
+        
 
         if (Input.GetKeyDown(KeyCode.Return))
         {

@@ -37,6 +37,7 @@ public class DialougeMan : MonoBehaviour {
             WalkieTalkie.Stop();
             EndWalkie.Play();
             Dead = true;
+            EndDialogue();
             return;
         }
         if (Input.GetKeyDown(KeyCode.Return) && Images.Count > 0)
@@ -55,7 +56,7 @@ public class DialougeMan : MonoBehaviour {
 
     void EndDialogue()
     {
-        //animator.SetBool("IsOpen", false);
+        animator.SetBool("IsOpen", false);
     }
     IEnumerator Wait()
     {
