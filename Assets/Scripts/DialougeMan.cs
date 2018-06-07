@@ -12,8 +12,8 @@ public class DialougeMan : MonoBehaviour {
     public AudioSource WalkieTalkie;
     public AudioSource EndWalkie;
     public bool Dead = false;
-    //public Animator animator;
-
+    public Animator animator;
+    //public float animationTimer;
     void Start () {
         Images = new Queue<Texture>();
         Images.Clear();
@@ -22,7 +22,7 @@ public class DialougeMan : MonoBehaviour {
             Images.Enqueue(img);
         }
         //StartWalkie.Play();
-        //animator.SetBool("IsOpen", false);
+        animator.SetBool("IsOpen", true);
         WalkieTalkie.Play();
         
     }
@@ -41,16 +41,15 @@ public class DialougeMan : MonoBehaviour {
         }
         if (Input.GetKeyDown(KeyCode.Return) && Images.Count > 0)
         {
-            //animator.SetBool("IsOpen", true);
-            //StartCoroutine("Wait");
-            Texture IMG = Images.Dequeue();
-            MyRaw.texture = IMG;
+            animator.SetBool("IsOpen", false);
+            StartCoroutine("Wait");
+            
         }
         
     }
     public void StartDialogue()
     {
-        //animator.SetBool("IsOpen", true);
+        animator.SetBool("IsOpen", false);
         return;
     }
 
@@ -63,6 +62,6 @@ public class DialougeMan : MonoBehaviour {
         yield return new WaitForSeconds(0.5f);
         Texture IMG = Images.Dequeue();
         MyRaw.texture = IMG;
-        //animator.SetBool("IsOpen", false);
+        animator.SetBool("IsOpen", true);
     }
 }
