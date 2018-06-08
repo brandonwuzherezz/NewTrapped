@@ -19,6 +19,10 @@ public class Flashlight : MonoBehaviour
     public static bool creation = false;
     AudioSource audioSource;
 
+    //public Transform playerBox;
+    //public Transform target;
+    
+
     // Use this for initialization
     void Start()
     {
@@ -36,6 +40,17 @@ public class Flashlight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //playerBox.transform.position = transform.position;
+        //playerBox.transform.Translate(target.transform.position);
+        /*if (Input.GetKey("a"))
+            transform.position -= transform.right * Time.deltaTime * maxSpeed;
+        else if (Input.GetKey("d"))
+            transform.position += transform.right * Time.deltaTime * maxSpeed;
+        else if (Input.GetKey("w"))
+            transform.position += transform.forward * Time.deltaTime * maxSpeed;
+        else if (Input.GetKey("s"))
+            transform.position -= transform.forward * Time.deltaTime * maxSpeed;*/
+
         if (Input.GetKeyDown(flashlightToggleKey))
         {
 
