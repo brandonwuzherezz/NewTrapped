@@ -29,10 +29,11 @@ public class EnterBarricadeDH : MonoBehaviour {
                 Locked.Play();
                 if (DialougeActive == false) {
                     print("HERE");
+                    GameObject.Find("DialougeMan").GetComponent<DialougeMan>().enabled = true;
                     GameObject.Find("DialougeMan").GetComponent<DialougeMan>().MyRaw = MyDiss;
                     GameObject.Find("DialougeMan").GetComponent<DialougeMan>().animator = animator;
                     GameObject.Find("DialougeMan").GetComponent<DialougeMan>().Dead = false;
-                    //GameObject.Find("DialougeMan").GetComponent<DialougeMan>().Images.Clear();
+                    GameObject.Find("DialougeMan").GetComponent<DialougeMan>().Images.Clear();
                     foreach (Texture img in MyImages)
                     {
                         GameObject.Find("DialougeMan").GetComponent<DialougeMan>().Images.Enqueue(img);
@@ -40,7 +41,7 @@ public class EnterBarricadeDH : MonoBehaviour {
                     animator.SetBool("IsOpen", true);
                     GameObject.Find("DialougeMan").GetComponent<DialougeMan>().WalkieTalkie.Play();
                     
-                    GameObject.Find("DialougeMan").GetComponent<DialougeMan>().enabled = true ;
+                    
                     GameObject.Find("InMyCar").GetComponent<DoThisForMe>().DisccusionName = "RawrImage";
                     GameObject.Find("InMyCar").GetComponent<DoThisForMe>().enabled = true;
                     DialougeActive = true;
