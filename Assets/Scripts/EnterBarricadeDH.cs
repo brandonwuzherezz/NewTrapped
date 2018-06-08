@@ -28,11 +28,11 @@ public class EnterBarricadeDH : MonoBehaviour {
             {
                 Locked.Play();
                 if (DialougeActive == false) {
-
+                    print("HERE");
                     GameObject.Find("DialougeMan").GetComponent<DialougeMan>().MyRaw = MyDiss;
                     GameObject.Find("DialougeMan").GetComponent<DialougeMan>().animator = animator;
                     GameObject.Find("DialougeMan").GetComponent<DialougeMan>().Dead = false;
-                    GameObject.Find("DialougeMan").GetComponent<DialougeMan>().Images.Clear();
+                    //GameObject.Find("DialougeMan").GetComponent<DialougeMan>().Images.Clear();
                     foreach (Texture img in MyImages)
                     {
                         GameObject.Find("DialougeMan").GetComponent<DialougeMan>().Images.Enqueue(img);

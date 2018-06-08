@@ -340,7 +340,7 @@ public class LoadLevel : MonoBehaviour
     }
     void SpawnOutsideHall1()
     {//spawn in DH from Hallway
-        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-50.05046f, -0.1651622f, 12.76999f);
+        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-48.0596f, -0.06215763f, 12.7515f);
         HallWay = false;
     }
     void SpawnOutsidePantry()

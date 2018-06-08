@@ -83,18 +83,5 @@ public class MasterBedroomBarricade : MonoBehaviour {
             Destroy(gameObject);
         }
     }
-    void OnGUI()
-    {
-        if (inTrigger)
-        {
-            if (!vaultKey)
-            {
-                GUI.Box(new Rect(200, 360, 200, 200), "You need a key to open door");
-            }
-            if (vaultKey && vaultlocked)
-            {
-                GUI.Box(new Rect(200, 360, 200, 200), "Press E to Unlock");
-            }
-        }
-    }
+   
 }

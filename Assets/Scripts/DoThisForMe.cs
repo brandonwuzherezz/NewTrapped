@@ -12,6 +12,7 @@ public class DoThisForMe : MonoBehaviour {
     {
         if (DeadDialouge.Contains(DisccusionName))
         {
+            GameObject.Find("DialougeMan").GetComponent<DialougeMan>().WalkieTalkie.Stop();
             GameObject.Find("DialougeMan").GetComponent<DialougeMan>().enabled = false ;
             Destroy(GameObject.Find(DisccusionName));
             this.enabled = false;
