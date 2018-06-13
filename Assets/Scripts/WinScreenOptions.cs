@@ -24,7 +24,9 @@ public class WinScreenOptions : MonoBehaviour {
 			Battery.DeletedBatteries.Clear();
 			Shadows.DeletedShadows.Clear();
 			Timer.Deletedimages.Clear();
-			LoadLevel.ShedDoor = false;
+            DoThisForMe.DeadDialouge.Clear();
+            EnterBarricadeDH.DialougeActive = false;
+            LoadLevel.ShedDoor = false;
 			LoadLevel.FoyerCloset = false;
 			LoadLevel.DiningRoom = false;
 			LoadLevel.HallWay = false;

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class KitchenBarricade : MonoBehaviour {
@@ -11,7 +12,10 @@ public class KitchenBarricade : MonoBehaviour {
     public Material UnlockedDoor;
     public AudioSource Locked;
     public AudioSource UnLock;
+    public RawImage MyRaw;
+    public RawImage MyRawr;
     public static bool KitchenDestroyed = false;
+
     public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -46,6 +50,10 @@ public class KitchenBarricade : MonoBehaviour {
             {
                 if (KitchenKey)
                 {
+                    if (Kitchenlocked)
+                    {
+                        MyRaw.enabled = true;
+                    }
                     if (Input.GetKeyDown(KeyCode.E))
                     {
                         Kitchenlocked = false;
@@ -55,10 +63,18 @@ public class KitchenBarricade : MonoBehaviour {
                         //play soundeffect
                         UnLock.Play();
                         KitchenDestroyed = true;
-                    
+
                     }
                 }
-
+                else
+                {
+                    MyRawr.enabled = true;
+                }
+            }
+            else
+            {
+                MyRaw.enabled = false;
+                MyRawr.enabled = false;
             }
         }
         if(KitchenDestroyed == true)
@@ -67,18 +83,5 @@ public class KitchenBarricade : MonoBehaviour {
         }
 
     }
-    void OnGUI()
-    {
-        if (inTrigger)
-        {
-            if (!KitchenKey)
-            {
-                GUI.Box(new Rect(200, 360, 200, 200), "You need a key to open door");
-            }
-            if (KitchenKey && Kitchenlocked)
-            {
-                GUI.Box(new Rect(200, 360, 200, 200), "Press E to Unlock");
-            }
-        }
-    }
+    
 }

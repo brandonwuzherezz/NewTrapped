@@ -340,7 +340,7 @@ public class LoadLevel : MonoBehaviour
     }
     void SpawnOutsideHall1()
     {//spawn in DH from Hallway
-        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-50.05046f, -0.1651622f, 12.76999f);
+        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-48.0596f, -0.06215763f, 12.7515f);
         HallWay = false;
     }
     void SpawnOutsidePantry()
@@ -392,7 +392,7 @@ public class LoadLevel : MonoBehaviour
     /*Manuels Code */
     void SpawnOutsideBedroom1A()
     {//Spawn in Bathroom from Bedroom1
-        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-14.74999f, -0.1651622f, -19.18f);
+        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-14.14999f, -0.1651627f, -2.777015f);
         Bedroom1A = false;
     }
 
@@ -407,7 +407,7 @@ public class LoadLevel : MonoBehaviour
 
     void SpawnOutsideBedroom2()
     {//Spawn in Bathroom from Bedroom2
-        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(0.83f, -0.1651627f, 22.5f);
+        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(5.07716f, -0.01597869f, 18.60066f);
         Bedroom2 = false;
     }
 
@@ -439,7 +439,7 @@ public class LoadLevel : MonoBehaviour
    
     void SpawnOutsideMasterBedroomC()
     {//Spawn in SFH from MasterBedroom
-        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-9.73f, -0.09485483f, -3.89f);
+        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-9.679993f, -0.09485483f, 14.82394f);
         MasterBedroomC = false;
     }
 
@@ -516,7 +516,7 @@ public class LoadLevel : MonoBehaviour
     }
     void SpawnOutsideSFH()
     {//spawn in BSH from SFH
-        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-13.6f, -0.09485483f, -1.729955f);//-13.6f, -0.09485483f, -1.729955f
+        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-12.9f, -0.09485483f, 16.33006f);//-13.6f, -0.09485483f, -1.729955f
         SFH = false;
     }
     void SpawnOutsideCloset1()

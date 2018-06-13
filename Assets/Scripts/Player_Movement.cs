@@ -7,7 +7,7 @@ public class Player_Movement : MonoBehaviour
 {
 
     public float maxSpeed = 4.0f;
-    bool facingRight = false;
+    bool facingRight = true;
     public int State = 0;
     public AudioSource audioSource;
 
@@ -23,7 +23,7 @@ public class Player_Movement : MonoBehaviour
         GameObject flash = GameObject.Find("Flashlight1");
         flashLight = flash.GetComponent<Flashlight>();
     }
-    void FixedUpdate()
+    void Update()
     {
         float move = Input.GetAxisRaw("Horizontal");
         if (Input.GetKey("a"))
@@ -31,9 +31,11 @@ public class Player_Movement : MonoBehaviour
             if (!audioSource.isPlaying) {
                 audioSource.Play();
            }
-            State = 1;
+            
+                State = 1;
+            
             //anim.SetInteger("State", State);
-            transform.position += transform.right * Time.deltaTime * maxSpeed;
+            transform.position -= transform.right * Time.deltaTime * maxSpeed;
             RB.velocity = new Vector3(0, RB.velocity.y, 0);
             
         }
@@ -43,9 +45,11 @@ public class Player_Movement : MonoBehaviour
             {
                 audioSource.Play();
             }
-            State = 1;
+            
+                State = 1;
+            
             //anim.SetInteger("State", State);
-            transform.position -= transform.right * Time.deltaTime * maxSpeed;
+            transform.position += transform.right * Time.deltaTime * maxSpeed;
             RB.velocity = new Vector3(0, RB.velocity.y, 0);
         }       
         else if (Input.GetKey("w"))
@@ -54,9 +58,10 @@ public class Player_Movement : MonoBehaviour
             {
                 audioSource.Play();
             }
+
             State = 1;
             anim.SetInteger("State", State);
-            transform.position -= transform.forward * Time.deltaTime * maxSpeed;
+            transform.position += transform.forward * Time.deltaTime * maxSpeed;
 
             RB.velocity = new Vector2(0, RB.velocity.y);
             //State = 0;
@@ -68,9 +73,11 @@ public class Player_Movement : MonoBehaviour
             {
                 audioSource.Play();
             }
-            State = 1;
+          
+                State = 1;
+            
             anim.SetInteger("State", State);
-            transform.position += transform.forward * Time.deltaTime * maxSpeed;
+            transform.position -= transform.forward * Time.deltaTime * maxSpeed;
 
             RB.velocity = new Vector2(0, RB.velocity.y);
             //State = 1;
@@ -91,10 +98,10 @@ public class Player_Movement : MonoBehaviour
             //State = 0;
         }
 
-        if (move > 0 && !facingRight ){
+        if (move < 0 && !facingRight ){
             Flip();
             
-        }else if(move < 0 && facingRight)
+        }else if(move > 0 && facingRight)
         {
             Flip();
             
@@ -130,7 +137,7 @@ public class Player_Movement : MonoBehaviour
             //flashLight.isActive = true;
             //flashLight.batteryLife = 0;
             //flashLight.myLight.intensity = 0;
-            Debug.Log("Trigger!");
+            //Debug.Log("Trigger!");
         }
 
     }

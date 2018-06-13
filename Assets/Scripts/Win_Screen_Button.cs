@@ -11,6 +11,26 @@ public class Win_Screen_Button: MonoBehaviour
         Battery.DeletedBatteries.Clear();
         Shadows.DeletedShadows.Clear();
         Timer.Deletedimages.Clear();
+        Key.DeleteKeys.Clear();
+        DontDestroy.isCreated = false;
+        Destroy(GameObject.Find("BackgroundSounds"));
+        EnterBarricadeDH.dhKey = false;
+        EnterBarricadeDH.DHlocked = true;
+        EnterBarricadeDH.DHDestroyed = false;
+        KitchenBarricade.KitchenKey = false;
+        KitchenBarricade.Kitchenlocked = true;
+        KitchenBarricade.KitchenDestroyed = false;
+        MBBarricade.MBKey = false;
+        MBBarricade.MBlocked = true;
+        MBBarricade.MBdestroyed = false;
+        MasterBedroomBarricade.vaultKey = false;
+        MasterBedroomBarricade.vaultlocked = true;
+        MasterBedroomBarricade.BarrDestroyed = false;
+        ButtonA.A_Active = false;
+        ButtonA.B_Active = true;
+        ButtonA.C_Active = false;
+        DestoryPlatform.Solved = false;
+
         LoadLevel.ShedDoor = false;
         LoadLevel.FoyerCloset = false;
         LoadLevel.DiningRoom = false;
@@ -46,11 +66,17 @@ public class Win_Screen_Button: MonoBehaviour
         LoadLevel.BSHB = false;
         LoadLevel.SFHB = false;
         LoadLevel.SFHC = false;
+        LoadLevel.BSHC = false;
         ActivateFlashlight.hasFlashlight = false;
         ActivateFlashlight.isFlashlightDestroyed = false;
         BatteryManager.battery = 0;
         SceneManager.LoadScene("1AIntro");
     }
 
+
+    public void Quit_Game()
+    {
+        Application.Quit();
+    }
 
 }
